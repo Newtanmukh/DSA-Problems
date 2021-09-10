@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t,a,b;
+    cin>>t;
+    while(t--){
+        cin>>a>>b;               
+        int i=1;
+        while(a>=0 && b>=0){                //try for a=3,b=2
+            if(i%2==1){
+                a=a-i;
+            }
+            else{
+                b=b-i;
+            }
+            i++;
+        }
+        i%2==1 ? cout<<"Limak\n" : cout<<"Bob\n";
+    }
+    return 0;
+}

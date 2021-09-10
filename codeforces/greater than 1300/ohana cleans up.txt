@@ -1,0 +1,21 @@
+n strings.
+
+so just compare and find the string with maximum type.
+
+i.e, aba,bca,aba,abb , answer =2
+
+int main() {
+map <string,int> m;
+
+int n;
+cin>>n;
+string s;
+while(n--)
+{cin>>s;
+m[s]++;
+}
+int ans=0;
+for(auto i : m)
+{ans=max(ans,i.se);}
+cout<<ans<<endl;
+

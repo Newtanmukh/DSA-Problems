@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>  
+using namespace std;
+
+
+bool visited[100000];
+vector<int> city[100000];
+
+
+
+void dfs(int x)
+{visited[x]=true;
+int i;
+
+for(i=0;i<city[x].size();i++)
+{if(!visited[city[x][i]])
+{dfs(city[x][i]);
+
+}
+
+}
+
+
+}
+
+
+int main(){
+int n,m;
+cin>>n>>m;
+
+vector<int>total;
+
+
+int x,y;
+while(m--)
+{cin>>x>>y;
+
+city[x].push_back(y);
+city[y].push_back(x);
+}
+
+int c=0;
+int i;
+for(i=1;i<n+1;i++)
+{
+  if(!visited[i])
+  {dfs(i);
+  c++;
+    total.push_back(i);}
+}
+
+cout<<total.size()-1<<endl;
+for(i=0;i<total.size()-1;i++)
+{cout<<total[i]<<" "<<total[i+1]<<endl;}
+
+
+
+  
+}

@@ -1,0 +1,46 @@
+for (int i = 0; i < Z; ++i) {
+            if (S[i] == 'A') A = i;
+            if (S[i] == 'B') B = i;
+        }
+        if ((B - A) % (SA + SB) == 0) {
+            printf("unsafe\n");
+        } else {
+            printf("safe\n");
+        }
+
+
+
+----------------------------------------------
+ANOTHER CODE  -
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string s;
+	    cin>>s;
+	    int a,b;
+	    cin>>a>>b;
+	    int l=0,r=0;
+	    int n=s.length();
+	    for(int i=0;i<n;i++)
+	    {
+	        if(s[i]=='A')l=i;
+	        if(s[i]=='B')r=i;
+	    }
+	    while(l<r)
+	    {
+	        l+=a;
+	        r-=b;
+	    }
+	    if(l==r)cout<<"unsafe\n";
+	    else cout<<"safe\n";
+	    
+	}
+	return 0;
+}

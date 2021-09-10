@@ -1,0 +1,54 @@
+    #include<stdio.h>
+    #include<iostream>
+    #include<math.h>
+    #include<algorithm>
+    #include<string.h>
+    #include<string>
+    #include<map>
+    #include<stack>
+    #define str strlen
+    #define rev reverse
+    #define sc scanf
+    #define pr printf
+    #define ll long long int
+    #define in freopen("input.txt","r",stdin);
+    #define out freopen("output.txt","w",stdout);
+    using namespace std;
+    const int MX = 1000001;
+    const int MI = 100001;
+    const int MT = 10001;
+    long long int y[MX];
+    void solve()
+    {
+        string s;
+        cin >> s;
+        int l = s . length();
+        int i;
+        string a;
+        for(i=0; i<l; i++)
+        {
+            if(s[i] == s[i+1] && s[i] == s[i+2])             //the thing is that any substring with length greater than or equal to three with same substring will be reduced to two.
+            continue;
+            else
+            a += s[i];
+        }
+        l = a . length();
+        for(i=0; i<l; i++)
+        {
+            if(a[i] == a[i+1] && a[i+2] == a[i+3])                 // aabbcc will become aa*bcc and in the end will become aabcc.
+            {
+                a[i+2] = '*';
+            }
+            if(a[i]!='*')
+            {
+                cout << a[i];
+            }
+        }
+        cout << endl;
+    }
+    main()
+    {
+       //in out
+       solve();
+    return 0;
+    }

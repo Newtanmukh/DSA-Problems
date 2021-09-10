@@ -1,0 +1,30 @@
+int maxteams(int n,int m)
+{if(n<0||m<0)
+return INT_MIN;
+else if((m>=1)&&(n>=1)&&(m+n>2))
+return max((maxteams(n-2,m-1)+1),(maxteams(n-1,m-2)+1));
+else
+return 0;   //that is when m and n both are either 0 or 1
+
+}
+
+
+
+
+int n=scan(),m=scan();
+    int sum=0;
+    while(n>=1&&m>=1&&n+m>2){
+        if(n>m){
+            sum++;
+            n-=2;
+            m--;
+        }
+        else{
+            sum++;
+            m-=2;
+            n--;
+        }
+    }
+    cout<<sum;
+
+

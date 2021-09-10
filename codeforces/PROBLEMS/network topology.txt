@@ -1,0 +1,51 @@
+    #include <iostream>
+    #include <cstdio>
+    #include <cstring>
+    #include <vector>
+     
+    using namespace std;
+     
+    int n, m;
+    vector <int> E[100010];
+     
+    bool isBus()
+    {
+      int cnt = 0;
+      for(int i = 1; i <= n; i++)
+        if(E[i].size() == 1) cnt++;
+        else if(E[i].size() != 2) return 0;
+      if(cnt == 2) return 1;
+      return 0;
+    }
+     
+    bool isStar()
+    {
+      if(m != n - 1) return 0;
+      for(int i = 1; i <= n;i++)
+        if(E[i].size() == n - 1) return 1;
+      return 0;
+    }
+     
+    bool isRing()
+    {
+      for(int i = 1; i <= n; i++)
+        if(E[i].size() != 2) return 0;
+      return 1;
+    }
+     
+    int main()
+    {
+      cin >> n >> m;
+      for(int i = 0; i < m; i++)
+      {
+        int a, b;
+        cin >> a >> b;
+        E[a].push_back(b);
+        E[b].push_back(a);
+      }
+      if(isBus()) cout << "bus topology" << endl;
+      else if(isRing()) cout << "ring topology" << endl;
+      else if(isStar()) cout << "star topology" << endl;
+      else cout << "unknown topology" << endl;
+      return 0;
+    }

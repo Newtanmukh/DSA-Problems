@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long int 
+#define fo(i, n) for(ll i=1; i<=n; i++)
+using namespace std;
+
+int main(void)
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        ll n, flag = 0; cin>>n;
+        ll b[n];
+        fo(i, n)
+            cin>>b[i];
+            
+        fo(i, n){
+            if(i%b[i]){
+                cout<<"NO\n"; flag = 1; break;
+            }
+        }
+        if(flag == 1)
+            continue;
+        else
+            cout<<"YES\n"; 
+      
+    }
+}

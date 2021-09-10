@@ -1,0 +1,22 @@
+if atleast one circleis fit inside the plate,it
+means that the total number of circles that will be fitted is odd
+as wewill place once circlein center and rest all will be placed symmetrically
+which will be even
+
+
+
+If first player can't make first move 
+(table is too small and plate doesn't fit it, i.e. 2r > min(a, b)), second player wins.
+s Else first player wins. 
+Winning strategy for first player: place first plate to the center of table. 
+After that he symmetrically reflects moves of second player with respect to center of table.
+ If second player has move, first player has symmetrical move, too.
+ If not, first player won
+\
+
+    if (r*2>a||r*2>b) {
+        cout<<"Second"<<endl;
+        return 0;
+    }
+    cout<<"First"<<endl;
+    return 0;

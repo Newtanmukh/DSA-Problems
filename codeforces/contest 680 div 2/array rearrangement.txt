@@ -1,0 +1,35 @@
+#include <bits/stdc++.h> 
+using namespace std;   
+int main() 
+{ int t;
+cin>>t;
+while(t--)
+{
+int n,x;
+cin>>n>>x;
+int a[n];
+int b[n];
+int q;
+for(q=0;q<n;q++)
+{cin>>a[q];}
+
+for(q=0;q<n;q++)
+{cin>>b[q];}
+
+sort(a,a+n);
+sort(b,b+n);
+reverse(b,b+n);
+int flag=1;
+for(q=0;q<n;q++)
+{int t=a[q]+b[q];
+if(t>x)
+{flag=0;
+break;}}
+
+if(flag)
+{cout<<"Yes"<<endl;}
+else
+cout<<"No"<<endl;
+
+}
+} 

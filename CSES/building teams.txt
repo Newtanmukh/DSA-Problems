@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>  
+using namespace std;
+
+//this is assuming that the branches do not share any connection.
+bool visited[100000];
+vector<int> city[100000];
+int teamnumber[100000];
+
+
+void dfs(int x,int y)
+{visited[x]=true;
+int i;
+
+
+for(i=0;i<city[x].size();i++)
+{if(!visited[city[x][i]])
+{dfs(city[x][i],1-y);
+teamnumber[city[x][i]]=y;
+
+}
+
+}
+
+
+}
+
+
+int main(){
+int n,m;
+cin>>n>>m;
+
+vector<int>total;
+
+
+int x,y;
+while(m--)
+{cin>>x>>y;
+
+city[x].push_back(y);
+city[y].push_back(x);
+}
+
+int c=0;
+int i;
+for(i=1;i<n+1;i++)
+{
+  if(!visited[i])
+  {teamnumber[i]=1;
+    dfs(i,0);
+  c++;
+   }
+}
+
+
+
+for(i=1;i<n+1;i++)
+cout<<teamnumber[i]+1<<" ";
+cout<<endl;
+
+  
+}

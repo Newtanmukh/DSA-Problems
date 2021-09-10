@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+#define ll long long
+int main() {
+	ll t; cin>>t;
+	while(t--)
+	{
+	    ll a,b,m; cin>>a>>b>>m;
+	    ll sum=abs(a-b);
+	    a=min(a,b);
+	    m=m*(m+1)/2;
+	    m=min(m,a);
+	    ll rem=a-m;
+	    cout<<sum+2*rem<<"\n";
+	}
+	return 0;
+}

@@ -1,0 +1,36 @@
+    #include <bits/stdc++.h>
+    #define fr(i,a,b) for (int i = (a); i < (b); ++i)
+    #define st first
+    #define nd second
+    #define dbg(x) cout << #x << " " << x << endl
+    using namespace std;
+     
+    const double eps = 1e-7;
+    const int inf = 0x3f3f3f3f;
+    typedef pair<int,int> ii;
+    typedef long long ll;
+    typedef vector<int> vi;
+     
+    int dia[5000];
+     
+    int main() {
+        int n, v; scanf("%d %d", &n, &v);
+        fr(i,0,n) {
+            int a, b; scanf("%d %d", &a, &b);
+            dia[a] += b;
+        }
+        int ans = 0;
+        fr(i,1,4000) {
+            int vv = v;
+            int x = min(dia[i-1], vv);
+            ans += x;
+            dia[i-1] -= x;
+            vv -= x;
+            x = min(dia[i], vv);
+            ans += x;
+            dia[i] -= x;
+        }
+        printf("%d\n", ans);
+        return 0;
+    }
+     

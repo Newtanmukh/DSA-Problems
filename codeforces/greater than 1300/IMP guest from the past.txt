@@ -1,0 +1,83 @@
+    #include <iostream>
+    using namespace std;
+    int main() {
+    int n,a,b,c;
+    cin>>n>>a>>b>>c;
+    int ans=0;
+        if (b - c > a){
+            ans+=n/a;
+            cout << ans;
+        }
+            else{
+            if (n >= b){
+                ans+=(n-c)/(b-c);
+                //if (n%(b-c) == b%(b-c)){
+                    //ans+=(n-b)/(b-c)+1;
+               //     n=c;
+               // }
+               /// else{
+                    //ans+=(n-b)/(b-c)+1;
+                    n-= (b-c) * ((n-c)/(b-c));
+               // }
+     
+            }
+            ans+=n/a;
+            cout << ans;
+        }
+     
+     
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ll temp = b - c ;
+  ll tp;
+  ll sum = 0 ;
+  if(a <= temp)
+   cout<<n/a<<endl;
+  else{
+      sum =  ( (n-b) /  (b-c) )+ 1 ;
+ 
+ 
+     if(n<b)sum=0;
+ 
+           sum+= (n-sum*b+sum*c)/a;
+ 
+      cout<<sum<<endl;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+	long long int ans = 0;
+	if((B - C) < A && B <= N){
+		ans += 1 + ((N - B) / (B - C));
+		N = C + ((N - B) % (B - C));
+	}
+	
+	ans += N / A;
+ 
+	printf("%lld\n", ans);

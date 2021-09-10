@@ -1,0 +1,46 @@
+// concept is that,since activation cost is to be paid once , so divide the activation cost by the number 
+//of months,so that it would appear as if you are paying (cost_activation/num_months) activation rupees every month
+//so in short,rupees per month   =   (cost_activation/num_months) + U*R
+
+
+
+
+
+#include<iostream>
+#include<cmath>
+#define ll long long int
+using namespace std;
+
+int main()
+{
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+ll t;
+cin>>t;
+while(t--)
+{
+    int u,n,i; float d;
+    cin>>d>>u>>n;
+    int mmon=0,m[n];
+    float r[n],c[n];
+    for(i=0; i<n; i++)
+    {
+    cin>>m[i]>>r[i]>>c[i];   
+    }
+    int planno=0; float cost=d*u; 
+    //cout<<cost<<'\n';
+    for(i=0; i<n; i++)
+    {
+    float cc=(r[i]*u) + c[i]/m[i];    //actually it should be (r[i]*u*m[i] + c[i])/m[i] but the first term can be pushed out of the bracket
+    //cout<<cc<<' ';
+    if(cc<cost)
+    {
+    cost=cc;
+    planno=i+1;
+    }
+    }
+    cout<<planno<<'\n';
+}      
+   return 0;
+}
+

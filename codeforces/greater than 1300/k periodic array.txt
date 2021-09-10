@@ -1,0 +1,4 @@
+the thing is for each of the n/k partitions, there will be k elements.
+for each of the element do a[i]++ if that element is 1 ,otherwise b[i]++. here i is with 
+respect to the subarray part,and not the original array.
+then for k , ans=ans+min(a[i],b[i])

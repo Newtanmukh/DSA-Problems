@@ -1,0 +1,55 @@
+#include<iostream>
+#include<map>
+#include<queue>
+#include<string>
+#include<vector>
+#include<sstream>
+#include<cstring>
+#include<cmath>
+#include<cstdio>
+#include<algorithm>
+#include<bitset>
+ 
+using namespace std;
+
+bool visited[1001];
+vector<pair<int,int> >v;
+int n;
+
+void dfs(int t){
+    visited[t]=1;
+    int x=v[t].first;
+    int y=v[t].second;
+    for(int i=0;i<n;i++){
+        if(!visited[i]){
+            if(v[i].first==x || v[i].second==y)
+                dfs(i);    
+        }
+    }
+    return ;
+}
+
+int main(){
+    //freopen("in.txt","r",stdin);
+    //freopen("out.txt","w",stdout);
+    
+    while(cin>>n){
+        v=vector<pair<int,int> >(n,make_pair(0,0));
+        for(int i=0;i<n;i++){
+            int x,y;
+            cin>>x>>y;
+            v[i]=make_pair(x,y);    
+        }
+        
+        memset(visited,0,sizeof(visited));
+        int cont=-1;
+        for(int i=0;i<n;i++){
+            if(!visited[i]){
+                dfs(i);
+                cont++;    
+            }
+        }
+        cout<<cont<<endl;
+    }
+    
+}

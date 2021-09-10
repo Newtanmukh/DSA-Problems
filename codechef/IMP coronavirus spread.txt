@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+      int n;      
+      cin>>n;
+      int arr[n];
+      for(int i=0;i<n;i++)
+        cin>>arr[i];
+      int diff[n];
+      diff[0]=0;
+      for(int i=1;i<n;i++)
+        diff[i]=arr[i]-arr[i-1];     // basically diff[i] stores the difference between this current array at position i and previous (i-1). 
+      int min=100,max=-1,count=1;
+      for(int i=1;i<n;i++)
+        {
+            if(diff[i]<=2)   //take 1,3,5 for example. it means,count will be 3 now.
+                             // because if 1 is infected,also will be infected and so is 5.(it will gradually spread after a long time.)
+            {
+                count++;
+            }
+            else
+            {
+              if(min>count)
+                min=count;
+              if(max<count)
+                max=count;
+              count=1;       
+            }
+        }
+      if(min>count)                   //in the end it may happen that like all were contionuos so , that thing under while loop actually never came.
+        min=count;
+      if(max<count)
+        max=count;
+      cout<<min<<" "<<max<<"\n";     
+      
+      
+    }
+    
+	// your code goes here
+	return 0;
+}

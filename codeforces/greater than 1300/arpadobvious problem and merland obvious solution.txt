@@ -1,0 +1,42 @@
+	
+
+int n,x;
+	scanf("%d%d",&n,&x);
+	long long ans=0;
+	for(int i=1;i<=n;i++)
+    {
+        scanf("%d",&a[i]);
+        int y=x^a[i];
+        ans=ans+b[y];                                     // its like evaluating two numbers whose prdocut is x. think like this. then at one hand y=x/a[i] , other hand b[a[i]]++.
+        b[a[i]]++;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cin.tie(0);
+	int n,a,x;
+	cin>>n>>x;
+	
+	lli r = 0ll;
+	for(int i=0;i<n;i++){
+		cin>>a;
+		r += num[a ^ x];
+		num[a]++;
+	}
+	
+	cout<<r<<endl;
+	return 0;

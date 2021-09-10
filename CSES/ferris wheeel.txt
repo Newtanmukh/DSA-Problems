@@ -1,0 +1,92 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+/*******************DEBUG TEMPLATE*************************/
+void __print(int x) {cerr << x;}
+void __print(long x) {cerr << x;}
+void __print(long long x) {cerr << x;}
+void __print(unsigned x) {cerr << x;}
+void __print(unsigned long x) {cerr << x;}
+void __print(unsigned long long x) {cerr << x;}
+void __print(float x) {cerr << x;}
+void __print(double x) {cerr << x;}
+void __print(long double x) {cerr << x;}
+void __print(char x) {cerr << '\'' << x << '\'';}
+void __print(const char *x) {cerr << '\"' << x << '\"';}
+void __print(const string &x) {cerr << '\"' << x << '\"';}
+void __print(bool x) {cerr << (x ? "true" : "false");}
+template<typename T, typename V>
+void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
+template<typename T>
+void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
+void _print() {cerr << "]\n";}
+template <typename T, typename... V>
+void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
+#ifndef ONLINE_JUDGE
+#define debug(x...) cerr << "[" << #x << "] = ["; _print(x)
+#else
+#define debug(x...)
+#endif
+/*******************DEBUG TEMPLATE*************************/
+
+
+
+/***************MACROS AND TYPEDEFS************************/
+#define tr(container, itr) for(typeof(container.begin()) itr = container.begin(); itr != container.end(); itr++)
+typedef long long ll;
+typedef vector <int> vi;
+typedef vector <long long> vii;
+#define ALL(container) container.begin(), container.end()
+#define NL cout<<"\n";
+#define pb push_back
+#define mp make_pair
+/****************MACROS AND TYPEDEFS***********************/
+
+
+
+/*********************MAIN PROGRAM*************************/
+int main(void)
+{
+    int n,x;
+    cin>>n>>x;
+    vi a(n);
+    for(int i = 0; i < n; i++)cin>>a[i];
+    sort(ALL(a));
+    vector <bool> vis(n,false);
+    int ptr = 0;
+    int i = 0, j = n - 1;
+    int cnt = 0;
+    while(i <= j)
+    {
+        if(!vis[j])
+        {
+            vis[j] = true;
+            if(a[j] + a[i] > x)
+            {
+                j--,cnt++;                  //i.e, j is going alone and no one else is going with it thats why we have done cnt++.
+            }
+            else
+            {
+                vis[i] = true;
+                i++,j--,cnt++;
+            }
+        }
+    }
+
+
+
+/*
+
+ for(int r = N-1; r >= l; r--){
+        if(p[l] + p[r] <= X) //basically there would be two cases , consider the case when r=l , then if 2*a[r]>x then ans++ and r-- and simply the loop will break otherwise r-- and l++ and again the loop will break. second condition being that 
+            l++;             //other case being that , if r-l =1. then this is trivial. either p[l] + p[r] <= X and then loop will break otherwise this will go to the first case.
+        ans++;
+
+*/
+
+    cout<<cnt;
+    NL
+    return 0;
+}
+/*********************MAIN PROGRAM*************************/

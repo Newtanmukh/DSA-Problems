@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+int n;
+cin>>n;
+
+int k;
+cout<<n<<" ";
+while(n!=1)
+{ k=2;
+
+ while(n%k!=0)
+ {k++;}
+
+ cout<<n/k<<" ";
+
+ n=n/k;
+
+
+
+
+
+}
+
+
+}

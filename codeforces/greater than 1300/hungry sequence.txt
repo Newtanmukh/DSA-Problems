@@ -1,0 +1,11 @@
+int arr[101];
+ 
+int main()
+{
+//	freopen("in.txt","r",stdin);
+    int n ;
+	cin >> n ;
+	for(int i=n ; i<n+n ; i++) 
+		printf("%d ",i);
+//	while(1);
+}

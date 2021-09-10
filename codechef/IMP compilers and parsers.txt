@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	long j;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+	    string s;
+	    long ans = 0;
+	    cin>>s;
+	    stack<char> st;
+	    for(j=0;j<s.length();j++)
+	    {
+	        if(s[j]=='<')
+	        {                                      // if(s[j]=='<') x++;
+	            st.push('<');                //th ething is that <<>><><> is valid. 
+	        }
+	        else
+	        {
+	            if(st.empty())                  //if(x==0) break; 
+	                break;
+	            else
+	            {
+	                st.pop();                  // x--
+	                if(st.empty())              // if(x==0) ans = j+1
+	                {
+	                    ans = j+1;
+	                }
+	            }
+	        }
+	    }
+	    cout<<ans<<endl;   
+	}
+	return 0;
+}
+s

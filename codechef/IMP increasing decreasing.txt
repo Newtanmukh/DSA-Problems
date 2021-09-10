@@ -1,0 +1,63 @@
+//catch of the question is that a digit can repeat only twice at maximum,since it has to be strictly increasing or dereasing.
+//consider 1,3,3,5,2,2. then we can print  -  1 2 3 5 2.
+//however if it  were 1,3,3,3... then we cant do it , since we want it to be strictlyincreasing or stritlydecreasing.
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,flag=0;
+	    cin>>n;
+	    int arr[200001];
+	    int a[200001];
+	    int b[200001];
+	    unordered_map<int,int> mp;
+	    for(int i=0;i<n;i++)
+	    {
+	    cin>>arr[i];
+	    mp[arr[i]]++;
+	    if(mp[arr[i]] > 2)
+	    flag=1;
+	    }
+	    int j=0,k=0;
+	    if(flag)
+	    cout<<"NO";
+	    else
+	    {
+	        for(int i=0;i<n;i++)
+	        {
+	            if(mp[arr[i]]==2)
+	            {
+	                a[j++]=arr[i];
+	                mp[arr[i]]--;
+	            }
+	            if(mp[arr[i]]==1)
+	            {
+	               b[k++]=arr[i];
+	                mp[arr[i]]--;
+	            }
+	        }
+	        sort(a,a+j);
+	        sort(b,b+k,greater<int>());
+	        if(a[j-1]==b[0])                    // i.e, if maximum element is repeated twice. 
+	        cout<<"NO";
+	        else
+	        {
+	            cout<<"YES"<<endl;
+	            for(int i=0;i<j;i++)
+	            cout<<a[i]<<" ";
+	            for(int i=0;i<k;i++)
+	            cout<<b[i]<<" ";
+	        }
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}

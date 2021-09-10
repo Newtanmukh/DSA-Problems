@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		cin>>n;
+		int arr[n];
+		for(int i=0;i<n;i++)cin>>arr[i];
+		sort(arr,arr+n);
+		int k = n/4;
+		bool flag = true;
+		for(int i=k;i<n;i+=k)
+		{
+			if(arr[i-1]==arr[i])    //checking if n/4 and n/4-1 are same or not,since all the values should be less than x.
+			{
+				flag = false;
+				break;
+			}
+		}
+		if(flag)
+		{
+			for(int i=k;i<n;i+=k)cout<<arr[i]<<" ";
+			cout<<endl;
+		}
+		else cout<<"-1\n";
+	}
+}

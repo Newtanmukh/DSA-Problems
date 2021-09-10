@@ -1,0 +1,60 @@
+#include <iostream>
+#include <bits/stdc++.h>              
+
+
+
+
+//in this code,we have got two cases . first one is that,for even places (0,2,4,6...)
+
+//if we have green there,we convert it to red and if we have got red at odd places,we convert it to green. sum1 is for that
+
+//second case sum2 is is for vice versa.
+
+
+
+
+
+
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int i,j,m,n;
+		long sum1=0,sum2=0;
+		cin>>m>>n;
+		vector<string>s;
+		string str;
+		for(i=0;i<m;i++)
+		{
+			cin>>str;
+			s.push_back(str);
+		}
+		char a[m][n],b[m][n];
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				if(i%2==0 && j%2==0 || i%2==1 && j%2==1){
+					if(s[i][j]=='G')                    //it eans ki  agar even hai toh red rehna chaiye
+						sum1+=3;
+					else
+						sum2+=5;
+				}
+				else
+				{
+					if(s[i][j]=='R')
+						sum1+=5;
+					else
+						sum2+=3;
+				}
+			}
+		}
+		cout<<min(sum1,sum2)<<endl;
+	}
+	return 0;
+}
+

@@ -1,0 +1,7 @@
+n — the number of cards containing number 0 and m — the number of cards containing number 1. We have answer, when ((n-1)<=m && m <= 2 * (n + 1)). If we have answer then we must do the following:
+
+    if (m == n - 1) then we derive the ones and zeros in one, but we must start from zero.
+
+    if (m == n) then we derive the ones and zeros in one.
+
+    if (m > n && m <= 2 * (n + 1)) then we must start form one and we derive the ones and zeros in one, but in the end must be one. And if we in the end and we have ones, then we try to stick to one unit so that we have. For example, we have 10101 and two ones, after we have 110101 and one ones, and then we have 1101101.

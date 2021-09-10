@@ -1,0 +1,28 @@
+    #include <iostream>
+    #include <cstdio>
+     
+    using namespace std;
+     
+    char s[100500];
+    int a[100500];
+    int main()
+    {
+        gets(s);
+        int n=0;
+        while(s[n]!='\0') n++;
+        int m;
+        scanf("%d",&m);
+        for(int i=1;i<n;i++)
+        {
+            a[i] = a[i-1];
+            if(s[i]==s[i-1]) a[i]++;
+        }
+        while(m--)
+        {
+            int l,r;
+            scanf("%d%d",&l,&r);
+            printf("%d\n",a[r-1]-a[l-1]);
+        }
+        return 0;
+    }
+

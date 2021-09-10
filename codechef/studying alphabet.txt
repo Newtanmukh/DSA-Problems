@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int y=s.length();
+    int p,i,j;
+    cin>>p;
+    for(i=0;i<p;i++)
+    {
+        int count=0;
+        string t;
+        cin>>t;
+        int k=t.length();
+        for(int i=0;i<k;i++)
+        {
+            for(j=0;j<y;j++)
+            {
+                if(s[j]==t[i])
+                count++;                   //indirectly,we are counting the number of characters in this particular that have common elements with the original string s. if this number is equalto the number of character in this string itself,then its good.
+            }
+        }
+        if(count==k)
+        cout<<"Yes"<<endl;
+        else
+        cout<<"No"<<endl;
+    }
+    return 0;
+}

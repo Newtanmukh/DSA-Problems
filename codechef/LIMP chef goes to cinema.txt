@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int min(int a,int b)
+{if(a>b)
+return b;
+else 
+return a;}
+int main() {
+  int t;
+  cin>>t;
+  while(t--)
+  {int n=1;
+  int x;
+  cin>>x;
+  while(n*(n+1)<2*x)
+  {n++;}
+  int ans=0;
+  if(2*x==n*(n+1))
+  ans=n;
+  else
+  {
+  
+  ans=min((x-((n)*(n-1))/2 + n-1),( (n*(n+1))/2 - x + n));}
+  cout<<ans<<endl;
+  }
+}

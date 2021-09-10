@@ -1,0 +1,7 @@
+int n;cin>>n;
+        int ans=0;
+        for(int i=1;i<=n;i++){
+                int x;cin>>x;
+                ans=gcd(ans,x);
+        }
+        cout<<ans*n<<endl;

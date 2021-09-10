@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n;
+	cin>>n;
+	while(n--){
+		int count  =0 ;
+		string str;
+		cin>>str;
+		for(int i=0;i<str.length();i++){
+			if(str[i]=='c'||str[i]=='h'||str[i]=='e'||str[i]=='f')
+            if((str[i+1]=='c'||str[i+1]=='h'||str[i+1]=='e'||str[i+1]=='f') &&(str[i]!=str[i+1]))
+                if((str[i+2]=='c'||str[i+2]=='h'||str[i+2]=='e'||str[i+2]=='f')&&(str[i]!=str[i+2])&&(str[i+1]!=str[i+2]))
+                    if((str[i+3]=='c'||str[i+3]=='h'||str[i+3]=='e'||str[i+3]=='f')&&(str[i]!=str[i+3])&&(str[i+1]!=str[i+3])&&(str[i+2]!=str[i+3]))
+        count++;
+		}
+
+if(count>0){
+	cout<<"lovely "<<count<<endl;
+}
+
+else{
+	cout<<"normal"<<endl;
+}
+	}
+	return 0;
+}

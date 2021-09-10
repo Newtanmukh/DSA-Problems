@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main() {
+	ll t;                   //u can write the expression in the question as sigma(Ai - 0.5)^2 =<  N/4.
+                                // since Ai>=1 , it means the above inequality will only hold when all the elements are 1.
+                                // so u just need to check whether its possible to conver all the elements to Ai.
+                                //so count the number of elements which ar egreater than 1. if thats less than or smaller than k , its good.
+	cin>>t;
+	while(t--)
+	{
+	    ll n,k,x;
+	    cin>>n>>k;
+	    ll count=0;
+	    while(n--){
+	        cin>>x;
+	        if(x>1)
+	          count++;
+	    }
+	    if(count<=k)
+	      cout<<"YES";
+	      else
+	      cout<<"NO";
+	      cout<<'\n';
+	}
+	return 0;
+}

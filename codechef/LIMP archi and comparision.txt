@@ -1,0 +1,5 @@
+two casees-
+  a,band n.
+one case if n is even, the compare the absolute of the twonumbers above and the bigger one is the answer.
+
+if n is odd,then just compare the twonumbers and output the bigger number. 

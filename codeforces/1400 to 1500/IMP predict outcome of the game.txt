@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+char solve(){
+    long long n,k,d1,d2,x;
+    scanf("%I64d%I64d%I64d%I64d",&n,&k,&d1,&d2);
+    if(n%3) return false;
+    ///      x-d1,x,x-d2
+    x=k+d1+d2;
+    if(x%3==0){
+        x/=3;
+        long long w1,w2,w3;
+        w1=n/3-(x-d1);
+        w2=n/3-x;
+        w3=n/3-(x-d2);
+        //cout<<n/3-w1<<' '<<n/3-w2<<' '<<n/3-w3<<endl;
+        if(w1>=0 && w2>=0 && w3>=0)
+            if(n/3-w1>=0 && n/3-w2>=0 && n/3-w3>=0)
+                if(w1+w2+w3==n-k) return true;
+    }
+    ///**************************************************
+    ///      x-d1,x,x+d2
+    x=k+d1-d2;
+    if(x%3==0){
+        x/=3;
+        long long w1,w2,w3;
+        w1=n/3-(x-d1);
+        w2=n/3-x;
+        w3=n/3-(x+d2);
+        //cout<<n/3-w1<<' '<<n/3-w2<<' '<<n/3-w3<<endl;
+        if(w1>=0 && w2>=0 && w3>=0)
+            if(n/3-w1>=0 && n/3-w2>=0 && n/3-w3>=0)
+                if(w1+w2+w3==n-k) return true;
+    }
+    ///      x+d1,x,x-d2
+    ///**************************************************
+    x=k-d1+d2;
+    if(x%3==0){
+        x/=3;
+        long long w1,w2,w3;
+        w1=n/3-(x+d1);
+        w2=n/3-x;
+        w3=n/3-(x-d2);
+        //cout<<n/3-w1<<' '<<n/3-w2<<' '<<n/3-w3<<endl;
+        if(w1>=0 && w2>=0 && w3>=0)
+            if(n/3-w1>=0 && n/3-w2>=0 && n/3-w3>=0)
+                if(w1+w2+w3==n-k) return true;
+    }
+    ///      x+d1,x,x+d2
+    ///**************************************************
+    x=k-d1-d2;
+    if(x%3==0){
+        x/=3;
+        long long w1,w2,w3;
+        w1=n/3-(x+d1);
+        w2=n/3-x;
+        w3=n/3-(x+d2);
+        //cout<<n/3-w1<<' '<<n/3-w2<<' '<<n/3-w3<<endl;
+        if(w1>=0 && w2>=0 && w3>=0)
+            if(n/3-w1>=0 && n/3-w2>=0 && n/3-w3>=0)
+                if(w1+w2+w3==n-k) return true;
+    }
+    return false;
+}
+
+main(){
+#ifndef ONLINE_JUDGE
+freopen("1.txt","r",stdin);
+#endif // ONLINE_JUDGE
+
+    int t;
+    scanf("%d",&t);
+    while(t--)
+        if (solve()) printf("yes\n");
+        else printf("no\n");
+
+    return 0;
+}

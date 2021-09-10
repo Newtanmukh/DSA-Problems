@@ -1,0 +1,13 @@
+int main() {
+	scanf("%d %d", &n, &d);
+	forn(i, n) scanf("%d", &a[i]);
+	int ip = 0;
+	ll ans = 0;
+	forn(i, n) {
+		while (a[i] - a[ip] > d) ip++;
+		if (ip < i - 1)
+			ans += (i - ip) * (ll)(i - ip - 1) / 2;              //the ith element allways will be a part of this triplet.
+	}
+	cout << ans << endl;
+    return 0;
+}

@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#include <iostream>
+
+#define qio ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define fop(i,a,b) for(i=a;i<b;i++)
+#define frev(i,a,b) for(i=a;i>=b;i--)
+#define iter(a) a.begin(),a.end()
+#define ll long long
+
+using namespace std;
+
+int main() {
+	// your code goes here
+	ll t,n,i,j,k,g,h;
+	ll a[1000000];
+	qio;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n;
+	    for(i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    k=LLONG_MAX;
+	    for(i=0;i<n;i++)
+	    {
+	        for(j=i+1;j<n;j++)
+	        {
+	            g=__gcd(a[i],a[j]);      //among these n numbers,the clock will freeze when any two numbers will have the common LCM. so just find the minimum LCM of of two numbers among these n numbers.
+	            h=a[i]*a[j];
+	            h=h/g;
+	            if(h<k)
+	            {
+	                k=h;
+	            }
+	        }
+	    }
+	    cout<<k<<endl;
+	}
+	return 0;
+}

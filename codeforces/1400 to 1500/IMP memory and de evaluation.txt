@@ -1,0 +1,46 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <cstring>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <map>
+#include <stack>
+#include <complex>
+#include <random>
+using namespace std;
+typedef long long ll;
+typedef long double ld;
+typedef unsigned long long ull;
+
+int A[3];
+int X, Y;
+
+int main()
+{
+    ios::sync_with_stdio(0);
+
+    cin >> X >> Y;
+    
+    A[0] = A[1] = A[2] = Y;
+    int ans = 0;
+    while (A[0] != X || A[1] != X || A[2] != X)
+    {
+        A[0] = min(X, A[1] + A[2] - 1);
+        sort(A, A + 3);
+        ans++;
+    }
+
+    cout << ans << "\n";
+
+    return 0;
+}
+

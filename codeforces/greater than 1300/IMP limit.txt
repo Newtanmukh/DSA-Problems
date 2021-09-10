@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b); 
+     
+}
+int main() {
+int n,m;
+cin>>n>>m;
+
+int a[n+1];
+int b[m+1];
+
+int t;
+for(t=0;t<n+1;t++)
+cin>>a[t];
+
+for(t=0;t<m+1;t++)
+cin>>b[t];
+
+reverse(a,a+n+1);
+
+reverse(b,b+m+1);
+
+int i=n;
+int j=m;
+
+while(a[i]==0)
+{i--;}
+
+while(b[j]==0)
+{j--;}
+
+
+if(j>i)
+cout<<0<<"/"<<1<<endl;
+else if(i>j)
+{if(a[i]*b[j]>0)
+{cout<<"Infinity"<<endl;}
+else 
+{cout<<"-Infinity"<<endl;}
+
+}
+else if(i==-1 && j==-1)
+{cout<<"Infinity"<<endl;}
+else
+{int x=a[i]/gcd(a[i],b[j]);
+int y=b[j]/gcd(a[i],b[j]);
+  if(y<0)
+  {x=-x;
+  y=-y;}
+
+
+  cout<<x<<"/"<<y<<endl;}
+
+
+
+
+
+    }

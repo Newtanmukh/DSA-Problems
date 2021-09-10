@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int T,P,H;
+	cin>>T;
+	while(T--){
+	    cin>>H>>P;
+	    int res=0;
+	    while(P>0){
+	        H-=P;
+	        P/=2;
+	        if(H<=0){
+	            res=1;
+	            break;
+	        }
+	    }
+	    std::cout << res << std::endl;
+	}
+	return 0;
+}

@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+
+int main(){
+   int n;
+   cin>>n;
+   int i;
+   long int a[n];
+ for(i=0;i<n;i++)
+ {cin>>a[i];}
+ 
+ set<int> s;
+int maxi=0;
+int c=1;
+
+  for(i=0;i<n;i++)
+{if(s.find(a[i]) != s.end())
+{maxi=max(maxi,c);
+s.clear();
+c=1;}
+else
+{s.insert(a[i]);
+c++;
+
+
+}
+
+
+}
+cout<<maxi<<endl;
+
+}

@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    string s1,s2;
+	    cin>>s1>>s2;
+	    int n=s1.length();
+	    int c=0;
+	    for(int i=0;i<n;i++)
+	    {
+	        if(s1[i]==s2[i])
+	        continue;
+
+                                    //a substring that you haave chosen,in that the  first position would be odd. suppose the substring is
+                                    //chosen by position 4,5,6,7,8 , then position 4 would be odd!!!
+
+
+//if the question would have been like,you can choose a substring and can change only the odd places and
+//that it is NOT compulsory to change allthe digits at the odd places,then the while loop would have been like-
+
+//               int p=i;
+//	        while(p<n)
+//	        {if(s1[p]!=s2[p])
+//	          {s1[p]=s2[p];}
+//	          p=p+2;
+//	        }
+//	        c++;
+
+
+
+
+
+
+	        int p=i;
+	        while(p<n && (s1[p]!=s2[p]))
+	        {
+	          s1[p]=s2[p];
+	          p=p+2;
+	        }
+	        c++;
+	    
+	    }
+	    cout<<c<<endl;
+	}
+	
+	return 0;
+}

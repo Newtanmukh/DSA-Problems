@@ -1,0 +1,55 @@
+//the algorithm is like this. first of all find the minimum element. so then every box will be full of these number of things
+//then to the left of this minimum lemeent,find the element which is just bigger than this. then all the boxes whose index number smaller than
+//then first minimum box will be filled with this number of things. and so on.
+
+//HINT : try to draw sticks of different length vertically in a line. then try to do the above algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    long i,r,p,q=0;
+	    cin>>p;
+	    q=p;
+	    for(i=1;i<n;i++)
+	    {
+	        cin>>r;
+	        if(p<r)
+	        {
+	            q+=p;
+	        }
+	        else
+	        {
+	            q+=r;
+	            p=r;
+	        }
+	    }
+	    cout<<q<<"\n";
+	}
+	return 0;
+}

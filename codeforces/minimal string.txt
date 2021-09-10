@@ -1,0 +1,94 @@
+#include <bits/stdc++.h> 
+using namespace std;
+int main() {
+  string s;
+  cin>>s;
+  int n=s.length();
+
+  stack <char> w;
+  stack <char> t;
+  stack <char> u;
+  char min;
+
+  int i;
+  for(i=n-1;i>=0;i--)
+  {w.push(s[i]);}
+  char x,y,z;
+ 
+ while(u.size()!=n)
+ {
+   if(t.empty())
+ {x=w.top();
+ w.pop();
+ t.push(x);}
+
+ else if(w.empty())
+ {
+   while(!t.empty())
+   {x=t.top();
+    t.pop();
+    u.push(x);}
+
+ }
+  else
+  {
+    if(w.size()>1)
+    {x=w.top();
+    w.pop();
+    y=w.top();
+    z=t.top();
+    min=x;
+    if(min>y)
+    min=y;
+    if(min>z)
+    min=z;
+
+    if(min==x)
+    {u.push(x);}
+
+    else if(min==y)
+    {t.push(x);
+    u.push(y);
+    w.pop();
+    }
+
+   else
+   {u.push(z);
+   t.pop();
+   t.push(x);
+   } 
+
+
+
+
+    }
+    else 
+    {x=w.top();
+    w.pop();
+    y=t.top();
+    
+    min=x;
+    if(min>y)
+    {min=y;}
+
+    if(min==x)
+    {u.push(x);}
+    else
+    {u.push(y);
+    t.pop();}
+  }
+ }
+ 
+}
+stack<char>copy;
+  while(!u.empty())
+  {x=u.top();
+  u.pop();
+  copy.push(x);}
+
+  while(!copy.empty())
+  {x=copy.top();
+  cout<<x;
+  copy.pop();}
+
+}

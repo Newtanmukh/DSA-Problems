@@ -1,0 +1,1 @@
+According to Goldbach's conjecture, which is checked for all numbers no more than 10^9, every even number is a sum of two prime numbers. Odd number can be sum of two primes, if (n-2) is prime (the only even prime number is 2). Otherwise, the answer is 3 — n=3+(n-3), (n-3) is sum of 2 primes, because it is even.

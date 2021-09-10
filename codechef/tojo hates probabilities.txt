@@ -1,0 +1,16 @@
+cin>>n>>m;
+
+cout<<n+m-1<<endl;
+
+
+
+//just make a random n by m figure and count the number of line cutting it at 45 degree such that they cut points. you will see it is n+m-1.
+
+for a 4 by 4 square,it will look like this
+
+
+               1  0.5  0.25  0.125
+              0.5 0.5  0.375  0.25
+             0.25 0.375 0.5   0.5
+            0.125 0.25  0.5    1 
+             

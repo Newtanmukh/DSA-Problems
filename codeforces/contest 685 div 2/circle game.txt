@@ -1,0 +1,30 @@
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+
+
+
+int main() 
+{ int t;
+cin>>t;
+while(t--)
+{long int d,k;
+cin>>d>>k;
+long int t=d/k;
+float x=(sqrt((d*d)-(t*t*k*k)));
+float y=x/k;
+
+
+
+long int r=y;
+long int q=r+t;
+
+if(q%2==0)
+{cout<<"Utkarsh"<<endl;}
+else
+{cout<<"Ashish"<<endl;}
+}
+	
+}
+

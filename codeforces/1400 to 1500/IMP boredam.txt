@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long counts[100010];
+long long dp[100010];
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    memset(counts, 0, sizeof(counts));
+    for (int i=1; i<=n; i++)
+    {
+        int a;
+        scanf("%d", &a);
+        counts[a]++;
+    }
+    dp[0] = 0;
+    dp[1] = counts[1];
+    for (int i=2; i<=100000; i++)
+    {
+        dp[i] = max(dp[i-1], dp[i-2] + counts[i] * i);
+    }
+    cout<<dp[100000]<<endl;
+    return 0;
+}

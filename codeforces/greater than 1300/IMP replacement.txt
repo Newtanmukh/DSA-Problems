@@ -1,0 +1,11 @@
+		sort(arr, arr+n);
+		if( arr[n-1] == 1 ){
+			arr[n-1] = 2;
+		}else{
+			arr[n-1] = 1;
+		}
+		sort(arr, arr+n);
+		Rep(i,n){
+			if(i)putchar(' ');
+			printf("%d", arr[i]);
+		}

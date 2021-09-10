@@ -1,0 +1,37 @@
+    #include <iostream>
+    #include <cstdio>
+    #include <cstdlib>
+    #include <cstring>
+    using namespace std;
+     
+    int dir[][2]={{0,-1},{0,1},{1,0},{-1,0}}; // N,S,E,W
+    char a[200000];
+    int main ()
+    {
+        int t,sx,sy,ex,ey;
+        while(scanf("%d%d%d%d%d",&t,&sx,&sy,&ex,&ey)!=EOF)
+        {
+            int x=ex-sx;
+            int y=ey-sy;
+            scanf("%s",a);
+            int len=strlen(a);
+            int i;
+            for(i=0;i<len;++i)
+            {
+                if(x>0 && a[i]=='E')
+                    x--;
+                else if(x<0 && a[i]=='W')
+                    x++;
+                else if(y>0 && a[i]=='N')
+                    y--;
+                else if(y<0 && a[i]=='S')
+                    y++;
+                if(x==0 && y==0)
+                    break;
+            }
+            if(x==0 && y==0)
+                printf("%d\n",i+1);
+            else printf("-1\n");
+        }
+        return 0;
+    }

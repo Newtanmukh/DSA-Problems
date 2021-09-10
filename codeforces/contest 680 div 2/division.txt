@@ -1,0 +1,20 @@
+    #include <bits/stdc++.h> 
+    using namespace std;   
+    int main() 
+    { int t;
+    cin>>t;
+    while(t--)
+    {
+    long long int p,q;
+    long long int i,x;
+    cin>>p>>q;
+    long long int r;
+    for(i=p;i>0;i--)
+    {
+    if(((p%i)==0)&&((i%q)!=0))
+    {r=i;
+    break;}
+    }
+    cout<<r<<endl;
+    }
+    } 

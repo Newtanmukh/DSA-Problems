@@ -1,0 +1,7 @@
+	lld n,m;
+	cin>>n>>m;
+	lld maxm = ((n-m+1) * (n-m)) / 2;
+	lld parti = (n/m);
+	lld extra = (n%m) * parti;
+	lld minm = (parti * (parti-1) )/2 * m + extra;
+	cout<<minm<<" "<<maxm<<endl;

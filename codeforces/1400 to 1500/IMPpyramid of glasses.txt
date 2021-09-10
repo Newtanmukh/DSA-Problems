@@ -1,0 +1,22 @@
+#include<stdio.h>
+double arr[12][12]={0},t;
+int i,j,n,cnt=0;
+int main()
+{
+   scanf("%d %lf",&n,&t);
+   arr[1][1]=t;
+   for(i=1;i<=n;i++)
+   {
+      for(j=1;j<=i;j++)
+      {
+         if(arr[i][j]>=1)
+         {
+           cnt++;                                     // basically this will increment when a[i][j]>=1.
+           arr[i+1][j]+=(arr[i][j]-1)/2;
+           arr[i+1][j+1]+=(arr[i][j]-1)/2;
+         }
+      }
+   }
+   printf("%d",cnt);
+return 0;
+}

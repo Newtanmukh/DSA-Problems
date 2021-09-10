@@ -1,0 +1,10 @@
+ans=0
+for(int i=0;i<n;i++)
+	{
+		if(a[i]==0)
+		count=0;
+		else
+		count++;
+		ans=max(ans,count);
+	}
+	cout<<ans<<endl;

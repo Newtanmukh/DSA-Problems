@@ -1,0 +1,60 @@
+    /* 문제
+     
+     
+    */
+     
+    #include <cstdio>
+    #include <cmath>
+    #include <algorithm>
+    #include <vector>
+    #include <stack>
+    #include <queue>
+    #include <functional>
+    #include <cstring>
+    #include <string>
+    #include <map>
+    #include <iostream>
+     
+    #define INF     0x7fffffff
+    #define MINF    0x80000000
+    #define test    printf("test\n")
+    #define A       first
+    #define B       second
+     
+    using namespace std;
+     
+    typedef long long ll;
+    typedef vector <double> vec_d;
+    typedef vector <vec_d> vvec_d;
+    typedef vector <int>    vec_i;
+    typedef vector <vec_i>  vvec_i;
+    typedef pair <int, int> pair_i;
+     
+    int main()
+    {
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+    #endif
+        int n, m;
+        scanf("%d%d", &n, &m);
+     
+        int v[1011];
+     
+        for (int i = 1; i <= n; i++)
+        {
+            scanf("%d", &v[i]);
+        }
+     
+        int sum = 0;
+     
+        for (int i = 0; i < m; i++)
+        {
+            int x, y;
+            scanf("%d%d", &x, &y);
+            sum += min(v[x], v[y]);
+        }
+     
+        printf("%d\n", sum);
+     
+        return 0;
+    }

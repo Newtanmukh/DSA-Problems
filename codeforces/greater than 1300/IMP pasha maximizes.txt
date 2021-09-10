@@ -1,0 +1,25 @@
+    #include<iostream>
+    #include<cstring>
+    using namespace std;
+    int main()
+    {
+        char s[32]; int k;
+        cin>>s>>k;
+        int len = strlen(s);
+        int st = 0;
+     
+        for(int i=0;i<len;i++)
+        {
+            int ma = i;
+            for(int j=i;j<len && (j-i)<=k;j++)
+                if(s[ma] < s[j])ma = j;
+            // swap
+            for(int j=ma; j>i;j--)
+                swap(s[j],s[j-1]);
+            k-=(ma-i);
+        }
+        cout<<s<<endl;
+     
+     
+        return 0;
+    }

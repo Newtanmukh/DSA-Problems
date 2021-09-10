@@ -1,0 +1,52 @@
+#include <vector>
+#include <math.h>
+#include <set>
+#include <map>
+#include <iostream>
+#include <sstream>
+#include <ctime>
+#include <assert.h>
+#include <queue>
+using namespace std;
+ 
+#define PI 3.141592653589793
+#define INF 2123456789
+#define NUL 0.0000001
+ 
+#define for_each(i, c) for (__typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
+ 
+#define SZ size()
+#define CS c_str()
+#define PB push_back
+#define MP make_pair
+#define INS insert
+#define EMP empty()
+#define CLR clear()
+#define LEN length()
+#define MS(x) memset(x, 0, sizeof(x))
+#define MS1(x) memset(x, -1, sizeof(x))
+ 
+typedef long long LL;
+typedef unsigned long long ULL;
+ 
+int main(){
+    int x1, y1, x2, y2; scanf("%d%d%d%d", &x1, &y1, &x2, &y2);
+    if (x1 == x2){
+        int side = abs(y1 - y2);
+        printf("%d %d %d %d\n", x1 + side, y1, x2 + side, y2);
+        return 0;
+    }
+    if (y1 == y2){
+        int side = abs(x1 - x2);
+        printf("%d %d %d %d\n", x1, y1 + side, x2, y2 + side);
+        return 0;
+    }
+ 
+    if (abs(y1 - y2) != abs(x1 - x2)){
+        printf("-1\n");
+        return 0;
+    }
+ 
+    printf("%d %d %d %d\n", x1, y2, x2, y1);
+    return 0;
+}

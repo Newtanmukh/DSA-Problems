@@ -1,0 +1,12 @@
+   int r,g,b;
+    cin>>r>>g>>b;
+    int s = 0;
+    s += r/3;
+    s += g/3;
+    s += b/3;
+    s += min(r%3, min(g%3, b%3));
+    if(r%3 == 2 && g%3 == 2 && b%3 == 0 && b/3 > 0) s++;                //take the case of 6,8,8 for instance. we can make 5 mixed bouquets then 1 blue and 1 green. so we will get 7.
+                                                                        // 
+    else if(r%3 == 2 && g%3 == 0 && b%3 == 2 && g/3 > 0) s++;
+    else if(r%3 == 0 && g%3 == 2 && b%3 == 2 && r/3 > 0) s++;
+    cout<<s<<endl;

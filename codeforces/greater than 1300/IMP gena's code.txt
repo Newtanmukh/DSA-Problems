@@ -1,0 +1,26 @@
+bool bfl(){
+	if (s[0] != '1')return 0;
+	repi(i, 1, strlen(s))if (s[i] != '0')return 0;
+	return 1;
+}
+ 
+ 
+char t[100011] = "1";
+int main(){
+ 
+	int x = 0;
+	int n;
+	scf(n);
+	rep(i, n){
+		scanf("%s",s);
+		if (s[0] == '0'){
+			cout << 0;
+			return 0;
+		}
+		if (bfl())x += strlen(s) - 1;
+		else strcpy(t, s);
+	}
+	printf("%s", t);
+	while (x--)printf("0");
+	return 0;
+}

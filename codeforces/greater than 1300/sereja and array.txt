@@ -1,0 +1,38 @@
+    #include <bits/stdc++.h>
+    #define _ ios_base::sync_with_stdio(0);cin.tie(0);
+    #define rep(i, n) for(ll i = 0; i < (n); i++)
+    #define F first
+    #define S second
+    typedef long long ll;
+    using namespace std;
+     
+    const ll N = 1e5 + 9;
+    ll n, q, sum;
+    ll a[N];
+     
+    int main()
+    {_
+        cin >> n >> q;
+        rep(i, n) cin >> a[i];
+        while (q--) {
+            ll t;
+            cin >> t;
+            if (t == 1) {
+                ll x, val;
+                cin >> x >> val;
+                x--;
+                a[x] = val - sum;
+            }
+            if (t == 2) {
+                ll val;
+                cin >> val;
+                sum += val;
+            }
+            if (t == 3) {
+                ll x;
+                cin >> x;
+                x--;
+                cout << a[x] + sum << endl;
+            }
+        }
+    }

@@ -1,0 +1,13 @@
+int main(){
+	int y,k,n;cin>>y>>k>>n;
+	int div;
+	if(y%k==0) div=k;
+	else div=k-y%k;
+	bool fin=false;
+	for(int i=div;(i+y)<=n;i+=k){
+		cout<<i<<" ";
+		fin=true;
+	}
+	if(!fin) cout<<"-1"<<endl;
+	return 0;
+}

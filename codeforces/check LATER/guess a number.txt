@@ -1,0 +1,7 @@
+the thing is that,if it is greater than or equal to and no, treat  it as less than. and for yes, if  >= x, then it is >x.
+
+similary do for reverse as well.
+
+now convert greater than to greater than or equal to. similary convert everything to either greater than or equal to or
+smaller than or equal to. then, for greater than or equal to, find the maximum among those.
+similarly for smaller than or equal to , find the minimum. if max<min, then its impossible.

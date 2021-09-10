@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+
+int main(){
+	/*Important*/
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	/*Imortant*/
+
+	ll t;
+	cin>>t;
+	while(t--){
+		ll n;
+		cin>>n;
+		ll arr[n];
+
+		for(int i=0;i<n;i++){
+			cin>>arr[i];
+		}
+
+		ll count=0;
+
+		for(int i=0;i<n-1;i++){
+			if(arr[i]!=arr[i+1]){
+				
+				count=count+2;
+				if(i+2<=n-1){
+					if(arr[i+1]!=arr[i+2])            //consider 1 2 3. ans in this case is 3,but if we had ignored this we would habe got ans as 4
+						count--;
+				}
+			}
+		}
+
+		cout<<count<<"\n";
+			
+
+	}
+
+	
+}

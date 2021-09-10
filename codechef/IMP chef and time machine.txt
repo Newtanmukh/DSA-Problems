@@ -1,0 +1,49 @@
+#include<iostream>
+#include<stack>
+#include<algorithm>
+#define fr(i,c) for(int i=0;i<c;i++)
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n,b,w,sum =0;
+        stack <int> st;
+        cin >> n >> w >> b;
+        int a[n],bb[n],c[w+b];
+        for(int i=0;i<n;i++)
+        {
+            cin >> a[i];
+        }
+        fr(i,n)
+        {
+        cin >> bb[i];
+        a[i]-=bb[i];
+        }
+        fr(i,w)
+        cin >> c[i];
+        fr(i,b)
+        cin >> c[w+i];
+
+        sort(a,a+n,greater <int> ());
+        sort(c,c+w+b);
+        fr(i,w+b)
+        st.push(c[i]);
+        fr(i,n)
+        {
+            while(!st.empty() && st.top() > a[i])                 // it means that kick these out because anyways if these dont fit for these a[i] it means it wont fit
+                    st.pop();                                                   // for a[i+1] as well. so just kick these out. 
+                
+            if(!st.empty() && st.top() <= a[i])
+              {
+                //cout << a[i] << " " << st.top() << endl;
+                a[i]-= st.top();
+                st.pop();
+            }
+            sum+=a[i];
+        }
+        cout << sum << endl;
+    }
+}

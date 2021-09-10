@@ -1,0 +1,2 @@
+this is just like the playlist problem only.
+just reverse the array,then apply the same algorithm of what you did in the playlist problem.

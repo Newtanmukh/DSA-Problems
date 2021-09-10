@@ -1,0 +1,30 @@
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{int n;
+	    cin>>n;
+	    int arr[n];
+	    int i;
+	    for(i=0;i<n;i++)
+	    {cin>>arr[i];}
+	    
+	    int sum=0;
+      int x;
+      sort(arr,arr+n);
+      reverse(arr,arr+n);
+    for(x=0;x<n;x++)
+    {arr[x] = arr[x]-x;   //ofcourse we will first add the greatest element and thus have to sort array in decreasing order first.
+    if(arr[x]<0)
+    {arr[x]=0;}
+    sum=sum+arr[x];}      
+    
+     cout<<(sum%1000000007)<<endl;
+      }
+      
+	}
+

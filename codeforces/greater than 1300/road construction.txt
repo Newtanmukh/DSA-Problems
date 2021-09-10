@@ -1,0 +1,29 @@
+#define LL long long int
+#define PII pair<int,int>
+#define PB push_back
+#define MP make_pair
+#define INF 1000000000
+#define debug(args...) do {cerr << #args << ": "; dbg,args; cerr << endl;} while(0)
+ 
+int main(){
+    int i,m,n,x,y;
+    scanf("%d %d",&n,&m);
+    set<int> s;
+    for(i=1;i<=n;i++)s.insert(i);
+    for(i=0;i<m;i++){
+        scanf("%d %d",&x,&y);
+        s.erase(x);
+        s.erase(y);
+    }
+    cout<<n-1<<endl;
+    for(i=1;i<=n;i++){                            //since 0=<m<n/2 , this will work easily. like if n=8,in the worstcase m=3 and all 6 vertices were different.
+                                                  //so it means 2 vertices will still remain.
+                                                  //again,if n was odd and n=7,m=3 in worst case,then 6 vertices go out still one vertex remain.
+
+
+
+        if(i != *s.begin())
+            cout<<i<<" "<<*s.begin()<<endl;
+    }
+    return 0;
+}

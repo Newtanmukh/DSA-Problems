@@ -1,0 +1,51 @@
+//its pretty logical. think about it.
+//start from below. u need to put the maximum number in the kth column in the last row. so if u put 
+n^2,it will be incorrect since u will have no number greater than n^2 as numbers in a row must be in
+inreasing sequence.
+similarly,once u do it for the numbers n^2-n+1 to n^2 ,then u will have the numbers 1,2,3,... n^2-n left.
+analyse it similarly for them as well.
+
+ALTERNATE METHOD -
+
+for n=5,k=3
+
+1 2 11 12 13
+3 4 14 15 16
+...
+
+the thing is that for each row and for column between 1 and k-1 put all the numbers
+then put the remaining numbers in row in increasing order.
+both of them will give correct answer even though numbers are different.
+thats because in the alternate soolution the rate of increase of numbers are n-k+1 whereas in my method it was n directly.
+
+
+
+
+    #include <stdio.h>
+     
+    int a[501][501], n, k;
+     
+    int main() {
+    	scanf("%d %d",&n,&k);
+    	int cur=1;
+    	for(int j=1;j<k;j++) {
+    		for(int i=1;i<=n;i++)
+    			a[i][j]=cur++;                                                 
+    	}
+    	long long sum=0;
+    	for(int i=1;i<=n;i++) {
+    		for(int j=k;j<=n;j++) {
+    			if(j==k) sum+=cur;
+    			a[i][j]=cur++;
+    		}
+    	}
+    	printf("%lld\n",sum);
+    	for(int i=1;i<=n;i++) {
+    		for(int j=1;j<=n;j++)
+    			printf("%d ",a[i][j]);
+    		puts("");
+    	}
+    	return 0;
+    }
+
+

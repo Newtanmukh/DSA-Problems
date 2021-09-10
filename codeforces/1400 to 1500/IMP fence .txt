@@ -1,0 +1,23 @@
+//main logic in this question  is that instead of O(n*k) design a O(n+k) algorithm to remove TLE
+
+
+
+REP(i,k)
+sum+=h[i];
+int i;
+
+int a[n-k+1];
+a[0]=sum;
+
+rep(i,1,n-k-1)
+{sum=sum-h[i-1]+h[i+k];
+  a[i]=sum;}
+
+
+int maximum=INT_MIN;
+int x=0;
+REP(i,n-k)
+{if(maximum>a[i])
+ {maximum=a[i];
+ x=i;}
+}

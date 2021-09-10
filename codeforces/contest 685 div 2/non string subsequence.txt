@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+
+
+
+int main() 
+{ 
+	int t;
+  cin>>t;
+  while(t--)
+  {
+    int n,q;
+    cin>>n>>q;
+    string s;
+    int i;
+    cin>>s;
+    int l,r;
+
+    while(q--)
+    {cin>>l>>r;
+    l--;
+    r--;
+    int j,x=0,y=0;
+
+    for(j=0;j<l;j++)
+    {if(s[j]==s[l])
+    {x=1;
+    break;}}
+
+    for(j=r+1;j<n;j++)
+    {if(s[j]==s[r])
+    {y=1;
+    break;}}
+
+    int f=x+y;
+    if(f>0)
+    cout<<"YES"<<endl;
+    else
+    cout<<"NO"<<endl;
+    }
+
+
+} 
+}
+

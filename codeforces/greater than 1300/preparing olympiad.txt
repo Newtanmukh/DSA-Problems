@@ -1,0 +1,15 @@
+for (int mask = 1; mask < (1 << n); ++mask) {
+        int sum = 0, mi = 1000000000, ma = -mi;
+        for (int i = 0; i < n; ++i) {
+            if (mask & (1 << i)) {
+                sum += c[i];
+                mi = min(mi, c[i]);
+                ma = max(ma, c[i]);
+            }
+        }
+        if (l <= sum && sum <= r && ma - mi >= x) {
+            ans++;
+        }
+    }
+    cout << ans;
+    return 0;

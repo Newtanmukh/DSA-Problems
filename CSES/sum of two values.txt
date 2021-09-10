@@ -1,0 +1,13 @@
+l = 0;      //sum of two values is a given number x.
+r = arr_size - 1;
+
+    
+    while (l < r) {
+        if (A[l] + A[r] == sum)
+            return 1;
+        else if (A[l] + A[r] < sum)
+            l++;
+        else // A[i] + A[j] > sum
+            r--;
+    }
+    return 0;

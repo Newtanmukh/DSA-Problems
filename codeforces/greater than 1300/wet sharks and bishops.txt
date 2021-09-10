@@ -1,0 +1,27 @@
+  
+
+
+
+
+
+
+
+
+
+
+
+  #include<cstdio>
+    int col[2005], row[2005];
+    int main() {
+      int n, a, b;
+      long long ans = 0;
+      scanf("%d", &n);
+      while (n--) {
+        scanf("%d%d", &a, &b);
+        ans += col[a + b]++;                                                //think of this as a straight line. x+y = constant is the line intersecting y=0
+                                                                            //at 135 degree with the horizontal
+        ans += row[a - b + 1002]++;
+      }
+      printf("%I64d", ans);
+      return 0;
+    }

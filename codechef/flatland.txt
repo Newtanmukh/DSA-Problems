@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int s=0;
+	    for (int j=0;j>=0;j++)
+	    {
+	        if ((n-j*j)<0)
+	        {
+	            n=n-(j-1)*(j-1);
+	            s=s+1;
+	            j=0;
+	        }
+	        if (n==0)
+	        {
+	            break;
+	        }
+	    }
+	    cout<<s<<endl;
+	}
+	return 0;
+}

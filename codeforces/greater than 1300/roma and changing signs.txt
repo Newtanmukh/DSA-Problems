@@ -1,0 +1,19 @@
+	int n, m;
+	cin >> n >> m;
+	int ar[n];
+	for(int i = 0; i < n; i++)
+		cin >> ar[i];
+	sort(ar, ar + n);
+	for(int i = 0; i < n && m && ar[i] < 0; i++){
+		ar[i] *= -1;
+		m--;
+	}
+	sort(ar, ar + n);
+	if(m & 1)
+		ar[0] *= -1;
+	int sum = 0;
+	for(int i = 0; i < n; i++)
+		sum += ar[i];
+	cout << sum << endl;
+ 
+}

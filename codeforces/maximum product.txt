@@ -1,0 +1,23 @@
+    #include<iostream>
+     
+    using namespace std;
+     
+    
+    int main() {
+        int n; 
+        int max=1000;       //use the concept that product of two negative numbers is positive.so last four negative*biggest element,last two negative*first 3 biggest element,first 5 positive element //
+        int a[max];
+        int T; 
+        cin >> T; 
+        while (T--) {
+            cin >> n; 
+            for (int i = 1; i <= n; i++) {
+                scanf("%d", &a[i]); 
+            }
+            sort(a + 1, a + n + 1); 
+            long long ans = max( a[n] * a[n - 1] * a[n - 2] * a[1] * a[2],  a[n] * a[n - 1] * a[n - 2] * a[n - 3] * a[n - 4]); 
+            ans = max(ans,  a[1] * a[2] * a[3] * a[4] * a[n]); 
+            cout << ans << endl; 
+        }
+        return 0; 
+    }

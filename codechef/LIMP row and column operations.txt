@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n, q;
+	cin >> n >> q;
+	string s;
+	long long r[n] = {0}, c[n] = {0};
+	while(q--){
+		string s;
+		int i, m;
+		cin >> s >> i >> m;
+		if(s == "RowAdd"){
+			r[i] += m;
+		}
+		else c[i] += m;
+	}
+	long long rm, cm;
+	rm = cm = 0;
+	for (int i = 0; i < n; ++i){
+		if(r[i] > rm) rm = r[i];
+		if(c[i] > cm) cm = c[i];
+	}
+	cout << rm + cm;
+	return 0;
+	
+}

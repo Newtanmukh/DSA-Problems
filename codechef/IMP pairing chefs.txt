@@ -1,0 +1,32 @@
+void solve(int m,vector<pair<int,int>> vec,vector<bool> vis,stack<int> st,int p1,int p2){
+	f(i,m){
+		cin>>p1>>p2;
+		vec.emplace_back(p1,p2);	
+	}
+	for(int i=m-1;i>=0;i--){
+		if(!(vis[vec[i].ff] || vis[vec[i].ss])){
+			vis[vec[i].ff]=true;
+			vis[vec[i].ss]=true;
+			st.push(i);
+		}
+	}
+	while(!st.empty()){
+		cout<<st.top()<<" ";
+		st.pop();
+	}
+	cout<<endl;
+}
+int main(){
+    tezz;
+	int t=1;
+	cin>>t;
+	while(t--){
+		int n,m,p1,p2;
+		cin>>n>>m;
+		stack<int> st;
+		vector<pair<int,int>> vec;
+		vector<bool> vis(n,false);
+		solve(m,vec,vis,st,p1,p2);
+	}
+    return 0;
+}

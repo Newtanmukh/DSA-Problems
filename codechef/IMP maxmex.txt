@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+
+#define ll long long
+#define eb emplace_back
+const int len=1e5+10;
+const ll inf=1e18 + 5;
+using namespace std;
+// vector and string constructor (size, variable)	
+
+
+void solve(){
+	
+		int n , m;
+		cin >> n >> m;
+		
+		set <int> a; 
+		
+		int cnt=0;
+		for(int i=0; i<n ; i++ ) {
+			int x; cin >> x;
+			if(x==m) cnt++;
+			a.insert( x );
+		}
+		
+		for(int i=1; i<m ; i++){                   //if any of the elements were not there in the chosen subset between 1 and m-1 with both 1 and m-1 inclusive, then the mex would have been lesser than m. consider the subset [m-2,m-1,m+2]. in this case the MEXis m-3 and NOT m
+			if (a.count(i)==0) {
+				cout<< - 1<<endl;
+				return;
+				} 
+			}
+			
+			
+		cout<<n-cnt<<endl;	
+		//sort(a, a+n);
+		
+		//if(upper_bound(a, a+n , m )- lowerbound( a, a+n, m);
+
+}	
+	 
+int main() {
+		
+	ios_base::sync_with_stdio(0);
+		
+	cin.tie(0);
+		
+
+	int t;
+	cin>>t;
+	//t=1;
+	while(t--) {
+		solve();
+	}
+		
+		
+	return 0;
+}
+	 
+ 

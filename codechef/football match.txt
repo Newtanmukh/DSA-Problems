@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {   string first,second,input;
+        int n,count1=0,count2=0,i=1;
+        cin>>n;
+        cin.ignore();
+        while(i<=n)
+        {
+
+            cin>>input;
+
+            if(i==1)
+                {
+                    first=input;
+                }
+            if(input==first)
+                count1++;
+            else
+                {
+                    
+                   second=input;
+                    count2++;
+                }
+            i++;
+        }
+        if(count1>count2)
+            cout<<first<<"\n";
+        else if(count1<count2)
+            cout<<second<<"\n";
+        else
+            cout<<"Draw"<<"\n";
+    }
+    return 0;
+}
+

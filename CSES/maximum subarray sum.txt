@@ -1,0 +1,21 @@
+int solveUsingDp(int a[],int n){
+    int dp[]=new int[n];
+    dp[0]=a[0];
+    int big=dp[0];                                    //basically the logic here is that,dp[i] is storing the the maximum sum of the subarray ENDING at i .
+                                                      // so we are checking the maximum between dp[i-1]+a[i] and a[i] and not dp[i-1]+a[i] and dp[i-1] 
+                                                      //because it would then would have been the maximum subsequence problem,that means that it must end at index i.
+                                                      // we want the maximum subarray question.
+    for (int i = 1; i < n; i++) {
+        dp[i]=max(dp[i-1]+a[i],a[i]);
+        if (dp[i]>big)big=dp[i];
+    }
+    return big;
+}
+
+
+
+
+example :
+
+-1 3 -2 5 3 -5 2 2
+-1 3  1 6 9  4 6 8 

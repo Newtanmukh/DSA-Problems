@@ -1,0 +1,42 @@
+    int main()
+    {
+        int t,n,i,j,x;
+        scanf("%d",&n);
+        int* A=new int[n];
+        for(i=0;i<n;i++)
+            scanf("%d",A+i);
+        sort(A,A+n);
+        x=(n-1)/2;
+        int mid=x;
+        int end=n-1,hold=0;
+        while(x>=0 && end>mid)
+        {
+            if(A[end]>= 2*A[x])
+            {
+                hold++;
+                end--;
+                x--;
+            }
+            else
+                x--;
+        }
+        printf("%d",n-hold);
+    }
+
+
+//alternate code
+
+int main(){
+	scanf("%d",&n);
+	for (int i=1;i<=n;i++) scanf("%d",&a[i]);
+	sort(a+1,a+n+1);
+	l=n/2;r=n;
+	while (l&&r>n/2){
+		if (a[l]*2<=a[r]){
+			l--;r--;ans++;                            //reason why we are starting from middleis that,suppose the caase when we had the maximum of n/2 
+                                                                  //. in that case first half of the elements will be subset of the bigger half.
+		}
+		else l--;
+	}
+	printf("%d",n-ans);
+}

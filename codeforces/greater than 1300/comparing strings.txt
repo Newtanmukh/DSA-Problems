@@ -1,0 +1,42 @@
+    //
+    //  main.cpp
+    //  CF
+    //
+    //  Created by Hossein Yousefi on 9/10/1393 AP.
+    //  Copyright (c) 1393 IranGeek. All rights reserved.
+    //
+     
+    #include <iostream>
+    #include <cstring>
+    #include <vector>
+    #include <algorithm>
+    #include <set>
+    #include <map>
+    using namespace std;
+     
+    typedef long long ll;
+    typedef pair<int, int> pii;
+    typedef pair<ll, ll> pll;
+    vector<int> chg;
+     
+    #define it(x) x::iterator
+     
+    int main(int argc, const char * argv[]) {
+        string s, t;
+        cin >> s >> t;
+        if (s.length() != t.length()) {
+            cout << "NO";
+            return 0;
+        }
+        int cnt = 0;
+        for (int i = 0; i < s.length(); ++i)
+            if (s[i] != t[i])
+                chg.push_back(i);
+        cnt = (int)chg.size();
+        if (cnt == 0 || (cnt == 2 && t[chg[0]] == s[chg[1]] && t[chg[1]] == s[chg[0]])) {
+            cout << "YES";
+            return 0;
+        }
+        cout << "NO";
+        return 0;
+    }

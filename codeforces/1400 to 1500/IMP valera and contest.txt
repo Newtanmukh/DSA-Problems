@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define fr(i,a,b) for (int i = (a); i < (b); ++i)
+#define ST first
+#define ND second
+#define inf 0x3f3f3f3f
+using namespace std;
+typedef pair<int,int> ii;
+typedef long long ll;
+
+int ans[1005];
+
+int main() {
+	int n, k, l, r, sall, sk;
+	cin >> n >> k >> l >> r >> sall >> sk;
+	int each = sk/k;
+	int up = sk%k;
+	fr(i,0,k) {
+		ans[i] = each;
+	}
+	fr(i,0,up) ++ans[i];
+	if (k < n) {
+		each = (sall-sk)/(n-k);
+		up = (sall-sk)%(n-k);
+		fr(i,k,n) {
+			ans[i] = each;
+		}
+		fr(i,k,k+up) ++ans[i];
+	}
+	printf("%d", ans[0]);
+	fr(i,1,n) printf(" %d", ans[i]);
+	puts("");
+	return 0;
+}

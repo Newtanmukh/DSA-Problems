@@ -1,0 +1,14 @@
+int main() {
+
+int n;
+cin>>n;
+if(n<3)
+cout<<n<<endl;
+else
+{if(n%2)
+cout<<n*(n-1)*(n-2)<<endl;
+else
+cout<<max(n*(n-1)*(n-2)/2, max((n-1)*(n-2)*(n-3),(n)*(n-1)*(n-3)/gcd(n,n-3)))<<endl;}
+
+
+}

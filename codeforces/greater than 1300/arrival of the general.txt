@@ -1,0 +1,18 @@
+    #include <cstdio>
+    int n,tot,ans,a[110],max = 0,min = 101,maxi,mini;
+    int main(){
+    	scanf("%d",&n);
+    	for (int i = 1;i <= n;++i) scanf("%d",&a[i]);
+    	for (int i = 1;i <= n;++i) if (a[i] > max){
+    		max = a[i];
+    		maxi = i;
+    	}
+    	for (int i = n;i >= 1;--i) if (a[i] < min){
+    		min = a[i];
+    		mini = i;
+    	}
+    	ans = maxi - 1 + (n - mini);
+    	if (maxi > mini) --ans;                             //for instance like,if maximum was to the far left aand minimum was to the far right,
+    	printf("%d\n",ans);
+    	return 0;
+    }

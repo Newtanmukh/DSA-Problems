@@ -1,0 +1,43 @@
+int main() {
+ 
+    int a , b , c;
+    int x , y , z;
+    cin >> a >> b >> c >> x >> y >> z;
+    x = a - x;
+    y = b - y;
+    z = c - z;
+    int s = 0 , h = 0;
+    if(x < 0) s += x;
+    else h += x / 2;
+    if(y < 0) s += y;
+    else h += y / 2;
+    if(z < 0) s += z;
+    else h += z / 2;
+    if(h >= -s) cout << "Yes";
+    else cout << "No";
+    return 0;
+}
+
+
+int main()
+{
+    //input("input.txt"); output("output.txt");
+    ios_base :: sync_with_stdio(false);
+    cin >> a >> b >> c >> x >> y >> z;
+    if (a > x)
+        q += (a - x) / 2;
+    else
+        need += x - a;
+    if (b > y)
+        q += (b - y) / 2;
+    else
+        need += y - b;
+    if (c > z)
+        q += (c - z) / 2;
+    else
+        need += z - c;
+    if (q >= need)
+        cout << "Yes";
+    else
+        ex();
+}

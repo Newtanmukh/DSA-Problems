@@ -1,0 +1,104 @@
+#include<bits/stdc++.h>  
+using namespace std;
+  
+typedef long long ll;
+typedef unsigned int uint;
+typedef unsigned long long ull;
+typedef double db;
+typedef long double ld;
+typedef pair<int,int> PII;
+typedef pair<ll,int> Pli;
+typedef pair<ll,ll> Pll;
+typedef vector<int> VI;
+typedef vector<PII> VII;
+#define rep(i,a,b) for(int i=(int)a;i<=(int)b;i++)
+#define per(i,a,b) for(int i=(int)a;i>=(int)b;i--)
+#define REP(i,n) for(int i=0;i<n;++i)
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back 
+#define MOD 1000*1000*1000+7
+vector<long> a[100010];
+bool visited[100010]={false};
+long long int c[100010];
+
+
+void dfs(long x, ll &cst)
+{
+	visited[x]=1;
+	cst=min(cst, c[x]);
+	for(long i=0; i<a[x].size(); i++)
+	{
+		if(!visited[a[x][i]])
+		dfs(a[x][i], cst);
+	}
+}
+
+ll gcd (ll a, ll b) {
+    if (b == 0)
+        return a;
+    else
+        return gcd (b, a % b);
+}
+
+ll bin_pow(ll x, ll e) {
+	if (e == 0) {
+		return 1;
+	}
+	if (e == 1) {
+		return x;
+	}
+	ll y = bin_pow(x, e / 2);
+	y = y * y;
+	if (e % 2 == 0) {
+		return y;
+	}
+	else {
+		return y * x;
+	}
+}
+
+bool checkprime(ull n)
+{if(n<=1)
+return false;
+if(n==2)
+return true;
+int i=2;
+int flag=1;
+rep(i,2,n-1)
+{if((n%i)==0)
+{flag=0;
+break;}
+}
+if(flag)
+return true;
+else
+return false;
+}
+
+
+
+int main() {
+  int n;
+  cin>>n;
+  ll sumx=0;
+  ll b[n];
+  REP(i,n)
+  {cin>>b[i];
+  sumx=sumx+b[i];}
+  ll minimum=INT_MAX;
+
+  long long int mx= (1<<n);
+  for(int i = 0; i < mx; ++i)
+  {int s=0;
+  for(int j = 0; j < n; ++j) {
+				if(i >> j & 1) {
+					s += b[j];
+				}
+			}
+      minimum=min(abs(sumx-2*s),minimum);
+			
+  }
+cout<<minimum<<endl;
+}

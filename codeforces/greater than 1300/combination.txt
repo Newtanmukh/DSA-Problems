@@ -1,0 +1,77 @@
+    #include <iostream>
+    #include <algorithm>
+    #include <cstdio>
+    using namespace std;
+     
+    const int MAXN = 1010;
+     
+    struct C{
+        int a;
+        int b;
+    };
+     
+    bool comp(C A, C B){                               //  bool comp(C &A, C &B)
+        if (A.b != B.b) return A.b > B.b;
+        else return A.a > B.a;
+    }
+     
+    C cards[MAXN];
+     
+    int main(){
+        int n;
+        cin >> n;
+        for (int i = 0; i < n; i++){
+            cin >> cards[i].a >> cards[i].b;
+        }
+        sort(cards, cards + n, comp);
+        int cnt = 1, ans = 0;
+        for (int i = 0; i < n; i++){
+            if (cnt != 0){
+                ans += cards[i].a;
+                cnt += cards[i].b - 1;
+            }else break;
+        }
+        cout << ans << endl;
+        return 0;
+    }
+
+
+
+/*    while(cnt>0&&t<n){
+        cnt--;
+        cnt+=p[t].b;
+        ans+=p[t].a;
+        t++;
+    }*/
+
+---------------------------------------------------------------------------------------------------
+
+
+bool compare(pair<int,int> p1,pair<int,int> p2){
+	if(p1.second == p2.second){
+		return p1.first > p2.first;
+	}
+ 
+	return p1.second > p2.second;
+}
+
+
+	pair<int,int> ab[n];
+	for(int i=0;i<n;i++){
+		cin>>ab[i].first>>ab[i].second;
+	}
+ 
+	sort(ab,ab+n,compare);
+ 
+	ll ans = 0;
+	ll t = 1;
+ 
+	for(int i=0;i<n;i++){
+		if(t==0){
+			break;
+		}
+ 
+		t--;
+		ans += ab[i].first;
+		t += ab[i].second;
+	}
