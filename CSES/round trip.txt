@@ -4,55 +4,38 @@ using namespace std;
 
 bool visited[200001];
 vector<int> city[200001];
-int teamnumber[200001]={-1};
 
+int parent[200001];
 bool checkvisited[200001];
+
+
+
+
 void dfs(int x,int y)
 {visited[x]=true;
 int i;
-
 int j;
 int p;
 
+parent[x]=y;
+
 for(i=0;i<city[x].size();i++)
 {
-
-  
   if(!visited[city[x][i]])
-{teamnumber[city[x][i]]=y;
-  dfs(city[x][i],1-y);
+  {
+    dfs(i);
 
-
+  }
+  else if(parent[city[x][i]])
+}
 }
 
-//basically checking at this point  that like,if one of the child of x has alrea
-}
-
-}
-
-
-
-
-
-bool checkdfs(int x)
-{
-int i;
-checkvisited[x]=true;
-for(i=0;i<city[x].size();i++)
-{checkvisited[city[x][i]]=true;
-  if(teamnumber[x]==teamnumber[city[x][i]])
-return false;
-
-}
-return true;
-
-}
 
 int main(){
 int n,m;
 cin>>n>>m;
 
-vector<int>total;
+
 
 
 int x,y;
@@ -63,25 +46,21 @@ city[x].push_back(y);
 city[y].push_back(x);
 }
 
-int c=0;
+
+
 int i;
 for(i=1;i<n+1;i++)
 {
   if(!visited[i])
-  {teamnumber[i]=1;
-    dfs(i,0);
-  c++;
+  {parent[i]=-1;
+    dfs(i,-1);
+ 
    }
 }
 
 for(i=1;i<n+1;i++)
 {
-  if(!checkvisited[i])
-  {if(checkdfs(i)==false)
-  {cout<<"IMPOSSIBLE"<<endl;
-  exit(0);}
-
-  }
+ 
 
 
 }
