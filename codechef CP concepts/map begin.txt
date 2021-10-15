@@ -1,0 +1,27 @@
+#include <iostream> 
+#include <iterator> 
+#include <map> 
+   
+using namespace std; 
+   
+int main() 
+{ 
+     map <int,pair<int,int>> marks; 
+     marks.insert(make_pair(160, make_pair(42,11))); 
+     marks.insert(make_pair(161, make_pair(21,30))); 
+     marks.insert(make_pair(162, make_pair(40,99))); 
+     marks.insert(make_pair(163, make_pair(50,53))); 
+     marks.insert(make_pair(164, make_pair(31,33))); 
+     marks.insert(make_pair(165, make_pair(12,1))); 
+     marks.insert(make_pair(166, make_pair(34,65))); 
+    
+     
+     cout << "nThe map marks is : n"; 
+     cout << "ROLL NO.tMarks\n"; 
+     for (auto itr : marks) { 
+        cout  << itr.first 
+             << " " << itr.second.first << " " << itr.second.second<<endl; 
+     } 
+     cout << endl; 
+     return 0;     
+  }

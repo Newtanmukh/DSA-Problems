@@ -1,0 +1,112 @@
+// CPP program to demonstrate working of STL stack 
+#include <bits/stdc++.h> 
+using namespace std; 
+
+void showstack(stack <int> s) 
+{ 
+	while (!s.empty()) 
+	{ 
+		cout << '\t' << s.top(); 
+		s.pop(); 
+	} 
+	cout << '\n'; 
+} 
+
+
+ALSO ,
+
+
+while (mystack.size() > 0) { 
+        sum = sum + mystack.top(); 
+        mystack.pop(); 
+    } 
+
+int main () 
+{ 
+	stack <int> s; 
+	s.push(10); 
+	s.push(30); 
+	s.push(20); 
+	s.push(5); 
+	s.push(1); 
+
+	cout << "The stack is : "; 
+	showstack(s); 
+
+	cout << "\ns.size() : " << s.size(); 
+	cout << "\ns.top() : " << s.top(); 
+
+
+	cout << "\ns.pop() : "; 
+	s.pop(); 
+	showstack(s); 
+
+	return 0; 
+} 
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+// using swap() function to swap elements of stacks 
+    mystack1.swap(mystack2); 
+
+
+
+------------------------------------------------------------------------------------------------
+
+
+// CPP program to demonstrate 
+// the working of STL stack of pairs 
+
+#include <bits/stdc++.h> 
+using namespace std; 
+
+// Print the current pair 
+void printPair(pair<int, string> p) 
+{ 
+
+	cout << "("
+		<< p.first << ", "
+		<< p.second << ") "; 
+} 
+
+// Print the Stack of Pairs 
+void Showstack(stack<pair<int, string> > s) 
+{ 
+	while (!s.empty()) { 
+		printPair(s.top()); 
+		s.pop(); 
+	}
+
+	cout << '\n'; 
+} 
+
+// Driver code 
+int main() 
+{ 
+	stack<pair<int, string> > s; 
+
+	s.push({ 10, "fjdsf" }); 
+	s.push({ 15, "asf" }); 
+	s.push({ 1, "qwertyui" }); 
+	s.push({ 5, "poiuy" }); 
+	s.push({ 7, "hjkl" }); 
+
+	cout << "Stack of Pairs: "; 
+	Showstack(s); 
+
+	cout << "\nSize of Stack of Pairs: "
+		<< s.size(); 
+	cout << "\nTop of Stack of Pairs: "; 
+	printPair(s.top()); 
+
+	cout << "\n\nRemoving the top pair\n"; 
+	s.pop(); 
+
+	cout << "Current Stack of Pairs: "; 
+	Showstack(s); 
+
+	return 0; 
+} 

@@ -1,0 +1,78 @@
+//sort this map in ascending order according to the second value of the vector.
+
+#include <iostream>
+#include <cmath>
+#include <bits/stdc++.h>
+
+using namespace std;
+#define range(i, a, b) for(int  i = a; i < b; i++)
+
+
+
+//sort the vector in ascending order according to its value(and NOT key)
+
+bool sortbysec( pair<int,int> &a, 
+               pair<int,int> &b) 
+{ 
+    return (a.second < b.second); 
+} 
+
+int main() {
+    int T, N, K, s, p, f;
+    cin >> T;
+    while (T--) {
+        cin >> N >> K;
+        map<int, vector<pair<int, int>>> compartments;
+
+        range(i, 0, N) {
+            cin >> s >> f >> p;
+            compartments[p].push_back(make_pair(f,s));
+        }
+        int answer = 0;
+        for(auto it:compartments){
+            auto vi = it.second;                           //it.second means you are taking the vector.
+            sort(vi.begin(), vi.end(),sortbysec);
+            int k = 0;
+            int filled_till = 0;
+            for(auto m : vi){
+                cout<<m.first<<" "<<m.second<<endl;
+            }
+            answer += k;
+        }
+        
+        cout<<"\n"<<endl;
+        
+
+
+    }
+    return 0;
+
+}
+
+
+
+INPUT -
+
+1
+4
+1
+34
+2
+1
+4
+5
+1
+2
+2
+1
+7
+3
+1
+
+OUTPUT -
+
+1
+2 2
+5 4
+3 7
+2 34

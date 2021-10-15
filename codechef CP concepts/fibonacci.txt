@@ -1,0 +1,23 @@
+function fib(n) {
+  declare variable i, memo[n]
+
+  for each i from 0 to n {
+    memo[i] = -1
+  }
+  memo[0] = 0
+  memo[1] = 1
+
+  return calcFibonacci(n, memo)
+}
+
+function calcFibonacci(n, memo) {
+  // If we've got the answer in our memo, no need to recalculate
+  if memo[n] != -1 then
+  return memo[n]
+
+  // Otherwise, calculate the answer and store it in memo    
+  memo[n] = calcFibonacci(n - 2, memo) + calcFibonacci(n - 1, memo)
+
+  // We still need to return the answer we calculated
+  return memo[n]
+}

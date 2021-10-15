@@ -1,0 +1,48 @@
+// logic in this question is that , dp[i] stores the maximum value that can be return upto index i. now , suppose we are at index i and we wish to find the max money that can be returned upto this index. so now we have got two options. first is either choose the dp[i-2] + nums[i] or simply ignore nums[i] and then dp[i] = dp[i-1]
+
+
+
+
+
+class Solution {
+public:
+    
+    int max(int a,int b)
+    {if(a>b)
+     return a;
+    else 
+     return b;
+    }
+    
+    int rob(vector<int>& nums) {
+        
+        
+        
+        int size=nums.size();
+        
+        if(size==1)
+            return nums[0];
+        
+        if(size==2)
+            return max(nums[0],nums[1]);
+        
+        
+        int dp[size];
+        int i;
+        for(i=0;i<size;i++)
+            dp[i]=0;
+        
+        dp[0]=nums[0];
+        dp[1]=max(nums[0],nums[1]);
+        
+        for(i=2;i<size;i++)
+        {dp[i]=max(dp[i-1],dp[i-2]+nums[i]);
+            
+        }
+        
+        
+        return dp[size-1];
+        
+        
+    }
+};

@@ -1,0 +1,8 @@
+map<string, string> m;        
+
+string r="something";
+      auto it=m.find(r);
+			if(it==m.end())
+         cout<<"unknown"<<"\n";
+			else
+         cout<<(*it).second<<"\n";
