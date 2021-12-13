@@ -1,3 +1,6 @@
+// Assuming that each element on the array is unique.
+
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& a, int k) 

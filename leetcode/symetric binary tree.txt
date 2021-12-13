@@ -11,10 +11,11 @@ public:
     {
         if (leftSymmetricNode == NULL && rightSymmetricNode == NULL)
             return true;
-        if (leftSymmetricNode == NULL || rightSymmetricNode == NULL)
+if (leftSymmetricNode == NULL || rightSymmetricNode == NULL)
             return false;
         if (leftSymmetricNode->val == rightSymmetricNode->val)
             return checkSymmetric(leftSymmetricNode->left, rightSymmetricNode->right) && checkSymmetric(leftSymmetricNode->right, rightSymmetricNode->left);
-        return false;
+
+        return false;//values at the nodes itself is different.
     }
 };
