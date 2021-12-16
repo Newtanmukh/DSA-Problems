@@ -6,16 +6,13 @@ public:
         
         return checkSymmetric(root->left, root->right);
     }
-    //check the two nodes in symmetric position
-    bool checkSymmetric(TreeNode *leftSymmetricNode, TreeNode *rightSymmetricNode)
+   
+    bool checkSymmetric(TreeNode *left, TreeNode *right)
     {
-        if (leftSymmetricNode == NULL && rightSymmetricNode == NULL)
-            return true;
-if (leftSymmetricNode == NULL || rightSymmetricNode == NULL)
-            return false;
-        if (leftSymmetricNode->val == rightSymmetricNode->val)
-            return checkSymmetric(leftSymmetricNode->left, rightSymmetricNode->right) && checkSymmetric(leftSymmetricNode->right, rightSymmetricNode->left);
-
-        return false;//values at the nodes itself is different.
+        
+if (left == NULL || right == NULL)
+            return left ==right;
+      
+            return left->val == right->val && checkSymmetric(left->left, right->right) && checkSymmetric(left->right, right->left);
     }
 };
