@@ -1,0 +1,38 @@
+if n>k*l then ofcourse this information is wrong and will return -1
+//if k==1 and n>1 also this will return -1 since we cant have the order as 11111...n times as no two players can repeat.
+however if its k=2 then we can arrange it as 121212......
+//in the following code we try to arrange the overs as - suppose number of overs is 8 and number of players is 5 and l=3.
+in that case         we will write it as       12345123
+
+
+#include<iostream>
+using namespace std;
+#define ll long long int
+void func(int n,int k,int l)
+{
+    if(k*l<n || (k==1 && n>1))
+    {
+        cout<<-1<<endl;
+        return;
+    }
+    int j=0;
+    while(n--)
+    {
+        cout<<j+1<<" ";
+        j=(j+1)%k;
+    }
+    cout<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k,l;
+        cin>>n>>k>>l;
+        func(n,k,l);
+        cout<<endl;
+    }
+    return 0;
+}

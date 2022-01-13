@@ -1,0 +1,98 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fastio() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math,O3")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+#define ll  long long
+#define int long long
+#define ld  long double
+#define endl "\n"
+#define pb  push_back
+#define fill(a,val) memset(a,val,sizeof(a))
+#define ff  first
+#define ss  second
+#define test  ll t; cin>>t; while(t--)
+#define loop(i,a,b)  for(ll i=a;i<b;i++)
+#define loopr(i,a,b) for(ll i=a;i>=b;i--)
+#define pii pair<ll,ll>
+#define all(v) v.begin(),v.end()
+const ll mod     = 1000*1000*1000+7;
+const ll inf     = 1ll*1000*1000*1000*1000*1000*1000 + 7;
+const ll mod2    = 998244353;
+const ll N       = 1000 * 100 + 100;
+const ld pi      = 3.141592653589793;
+ll power(ll x,ll y,ll p = LLONG_MAX ){ll res=1;x%=p;while(y>0){if(y&1)res=(res*x)%p;y=y>>1;x=(x*x)%p;}return res;}
+
+
+
+
+
+struct ans{
+	ll a,b;
+};
+
+
+
+
+
+
+//  logic is that we sort these according to its difference.
+
+
+
+
+
+
+
+bool cmp(ans x, ans y){
+	if(abs(x.a-x.b) > abs(y.a-y.b)) return true;
+	return false;
+}
+void solve(){
+    ll n,X,Y;
+    cin >> n >> X >> Y;
+    ans x[n];
+    loop(i,0,n){
+    	cin>>x[i].a;
+    }
+    loop(i,0,n){
+    	cin>>x[i].b;
+    }
+    sort(x,x+n,cmp);
+    ll ans=0;
+    for(ll i=0;i<n;i++){
+    	ll u=x[i].a,v=x[i].b;
+    	if(u>v){
+           if(X > 0){
+           	X--;
+           	ans+=u;
+           }
+           else{
+           	Y--;
+           	ans+=v;
+           }
+    	}
+    	else{
+    		if(Y > 0){
+    			Y--;
+    			ans+=v;
+    		}
+    		else{
+    			X--;
+    			ans+=u;
+    		}
+    	}
+    }
+    cout << ans << endl;
+}
+
+signed main(){
+    fastio();
+    #ifndef ONLINE_JUDGE   
+      freopen("input.txt","r",stdin);
+      freopen("output.txt","w",stdout);
+    #endif
+    // test
+    solve();
+    return 0;
+}

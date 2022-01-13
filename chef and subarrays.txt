@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,count=0;
+	    cin>>n;
+	    int a[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    for(int i=0;i<n;i++)
+	    {
+	        int sum=0,p=1;
+	        for(int j=i;j<n;j++)
+	        {
+	            sum+=a[j];            //this is a beautiful code. inside every iteration of i,there is iteration ofj and inside iteration of j its automatically checking for subarrays too. like one size,two size inside j etc.
+	            p*=a[j];
+	            if(sum==p)
+	            {
+	                count++;
+	            }
+	        }
+	    }
+	    cout<<count<<endl;
+	}
+	return 0;
+}

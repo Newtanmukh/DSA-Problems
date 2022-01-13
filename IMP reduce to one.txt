@@ -1,0 +1,9 @@
+suppose numbers were a,b,c,d.....(in any order)
+
+then for a and b, it would get replaced by (a+1)(b+1)-1
+
+now this number with c, it would become (a+1)(b+1)(c+1)-1
+
+so in this way the final answer will be ((a+1)(b+1)(c+1)(d+1)....)-1
+
+hence the final answer is (N+1)!-1

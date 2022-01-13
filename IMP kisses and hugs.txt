@@ -1,0 +1,8 @@
+develop  a recurrence relation for the same.
+
+T(n+1) = T(n) + (n/2) + 1 if n is even
+T(n) + (n-1)/2 + 2 if n is odd
+
+i did this by taking into consideration a string of length n. then i added a blank to the start one. 
+so now the string is of length (n+1). so now, if the first letter added is H , then the number of cases will be T(n)
+if the letter added is K, then the number of cases will vary according to length.

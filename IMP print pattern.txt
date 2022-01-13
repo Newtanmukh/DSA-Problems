@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int a[n][n];
+	    for(int i=0;i<n;i++)
+	    {
+	        for(int j=0;j<n;j++)
+	        {
+	            a[i][j]=0;
+	        }
+	    }
+	    int count=1;
+	    for(int i=0;i<n;i++)
+	    {
+	        for(int j=0;j<n;j++)
+	        {
+	            if(a[i][j]==0)
+	            {
+	                int jpos=j;
+	                int ipos=i;
+	                while(jpos>=0 && ipos<n)
+	                {
+	                    a[ipos][jpos]=count;        
+	                    count++;
+	                    jpos--;
+	                    ipos++;                                        // j-- and i++ is a cool way to traverse elements diagonally.
+	                }
+	            }
+	        }
+	    }
+	    for(int i=0;i<n;i++)
+	    {
+	        for(int j=0;j<n;j++)
+	        {
+	            cout<<a[i][j]<<" ";
+	        }
+	        cout<<"\n";
+	    }
+	}
+	return 0;
+}

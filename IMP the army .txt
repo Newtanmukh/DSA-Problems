@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define mod (1000000007)
+#define lli long long int
+#define pf push_front
+#define pb push_back
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    lli testcases;
+    cin >> testcases;
+    while (testcases--)
+    {
+        lli n, m;
+        cin >> n >> m;
+        vector<lli> v;
+        lli x;
+        for (lli i = 0; i < m; i++)
+        {
+            cin >> x;
+            v.pb(x);
+        }
+        lli mi = *min_element(v.begin(), v.end()); 
+
+//think logically. a number will be maximum when 0 is either to its extreme left position or extreme right position.
+// actually u can create this by making two separate arrays,in one u can fill in numbers by taking the position with least value as zero,and other as max value as ero. 
+//then just output the max of two arrays for each i.
+
+
+        lli mx = *max_element(v.begin(), v.end());
+        for (lli i = 0; i < n; i++)
+        {
+            x = max(abs(mx - i), abs(mi - i));
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}

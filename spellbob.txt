@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+     
+    
+	ll t;
+	cin>>t;
+	
+	while(t--)
+	{
+	    string a,c;
+	    int b=0,o=0;
+	    cin>>a>>c;
+	    if((a[0]=='o' || c[0]=='o') && (a[1]=='b' || c[1]=='b') && (a[2]=='b' || c[2]=='b'))
+	    cout<<"yes\n";
+	    else if((a[0]=='b' || c[0]=='b') && (a[1]=='o' || c[1]=='o') && (a[2]=='b' || c[2]=='b'))
+	    cout<<"yes\n";
+	    else if((a[0]=='b' || c[0]=='b') && (a[1]=='b' || c[1]=='b') && (a[2]=='o' || c[2]=='o'))
+	    cout<<"yes\n";
+	    else
+	    cout<<"no\n";
+	     
+	    
+	     
+	    
+	}
+	
+	return 0;
+}

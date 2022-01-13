@@ -1,0 +1,23 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	while(n--)
+	{
+	    long int k,x;
+	    cin>>k;
+	    x=0;
+	    for(int j=12;j>=1;j--)
+	    {
+	        x=x+k/(int)(pow(2,j-1));
+	        k=k%(int)(pow(2,j-1));
+	    }
+	    cout<<x<<endl;
+	}
+	
+	return 0;
+}

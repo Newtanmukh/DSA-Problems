@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+
+
+
+//u can also do "abcabcabc..."
+
+
+
+
+int main() {
+	int t,n;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    scanf("%d",&n);
+	    int i=0;
+	    while(n--)
+	    {
+	        printf("%c",'a' + i);
+	        i=(i+1)%26;
+	    }
+	    i=0;
+	    printf("\n");
+	}
+	return 0;
+}

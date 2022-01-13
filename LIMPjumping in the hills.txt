@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,u,d;
+	    cin>>n>>u>>d;
+	    int s[n];
+	    for(int i=0; i<n; i++){
+	        cin>>s[i];
+	    }
+	    int x=1;
+	    int p=1;
+	    int i=0;
+	    bool r=true;
+	   
+	    while(i<n & r){
+	        if(s[i+1]>s[i] & s[i+1]-s[i]<=u){
+	            x++;
+	        }else if(s[i+1]<s[i] & s[i]-s[i+1]<=d){
+	            x++;
+	        }else if(s[i+1]<s[i] & p==1){
+	            x++;
+	            p--;
+	        }else if(s[i]==s[i+1]){
+	            x++;
+	        }else{
+	            r=false;
+	        }
+	        i++;
+	    }
+	    cout<<x<<endl;
+	}
+	return 0;
+}

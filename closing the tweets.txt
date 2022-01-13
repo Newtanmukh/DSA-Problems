@@ -1,0 +1,19 @@
+while(k--)
+{cin>>x;
+if(x=='CLOSE ALL')
+{for(i=0;i<n;i++)
+a[i]=0;
+
+cout<<0;
+continue;}
+
+a[x]=(a[x]+1)%2;
+
+int sum=0;
+
+for(i=0;i<n;i++)
+{sum=sum+a[i];}
+
+cout<<sum;
+
+}

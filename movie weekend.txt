@@ -1,0 +1,13 @@
+first of all find int mx=max(li*ri)
+
+
+now iterate over the loop and find where mx=li*ri. put i=1
+if (ri>i)
+ri=i;
+
+
+
+now iterate over the loop and find where
+if(ri==i)
+break;
+cout<<i(i., the poisition of ri)

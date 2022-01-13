@@ -1,0 +1,24 @@
+create arr[M] and a[K].
+
+find the number of common elements between these two arrays.
+ that will be the number of source file both tracked and ignored.
+
+after that create array int array[N]
+
+then,
+
+(for i=0;i<m;i++)
+{array[arr[i]]++;}
+
+(for i=0;i<k;i++)
+{array[arr[i]]++;}
+
+count = 0;
+(for i=0;i<N;i++)
+{
+if(array[i]==0)
+{count++;}
+}
+
+
+cout<<(no of common elements)<<count<<endl;

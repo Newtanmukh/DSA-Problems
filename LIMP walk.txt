@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>  
+using namespace std;   
+typedef long long ll;
+typedef unsigned int uint;
+typedef unsigned long long ull;
+typedef double db;
+typedef long double ld;
+typedef pair<int,int> PII;
+typedef pair<ll,int> Pli;
+typedef pair<ll,ll> Pll;
+typedef vector<int> VI;
+typedef vector<PII> VII;
+#define rep(i,a,b) for(int i=(int)a;i<=(int)b;i++)
+#define per(i,a,b) for(int i=(int)a;i>=(int)b;i--)
+#define REP(i,n) for(int i=0;i<n;++i)
+
+//understand this algorithm as , suppose the max was of some intitial value. then at the ith element,it would  become (max-i),considering at each jump the value of current velocity decreases by 1.
+//so if(a[i]>(max-i)), then max=a[i]+i
+//the reason why my algorithm did  not work was becuase,suppose the array is 5,1,1,1,1,1,1,1. then acording to mylogic the answer should have been 5+0,which is wrong.
+
+int main() {
+  int t;
+  cin>>t;
+  while(t--)
+  {int n;
+  cin>>n;
+  int a[n];
+  REP(i,n)
+  {cin>>a[i];}
+  int max=a[0];
+  int pos;
+  REP(i,n)
+  {if(a[i]+i>=max)
+  {max=a[i]+i;
+  pos=i;}}
+  cout<<max<<endl;
+  }
+}

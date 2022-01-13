@@ -1,0 +1,26 @@
+// take two cases,once when n has even number of digits and another when it has odd number of digits.
+//then,calculate their probabilities separately.
+
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int x,n,t,ans,i;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        ans=ceil(n/2.0);
+        ans=n-ans;
+        cout<<1<<" "<<1;
+        for(i=1;i<=ans;i++){
+            cout<<0;
+        }
+        cout<<endl;
+        
+    }
+    return 0;
+}

@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    //cin.tie(0);cout.tie(0);
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        vector <ll> v1(2,0);
+        cin>>n;
+        for(int i=0;i<n;i++)          //observe that sigma(Xi^2) is maximum when all the positive numbers are inside one group
+                                      //and all the negative numbers are inside another. so k=2.
+                                        //that sumwill be max if we put all +ve numbers inside one group,all negative numbers inside another.
+                                    //so if x=no. of positive numbers and y=no. of negative numbers,max(x,y) and min(x,y)
+        {
+            ll num;
+            cin>>num;
+            if(num>0) v1[0]++;
+            else v1[1]++;
+        }
+        if(v1[0]==0 || v1[1]==0)
+        {
+            ll m=max(v1[0],v1[1]);
+            cout<<m<<" "<<m<<"\n";
+        }
+        else
+        {
+            ll small=min(v1[0],v1[1]);
+            ll maxi=max(v1[0],v1[1]);
+            cout<<maxi<<" "<<small<<"\n";
+        }
+    }
+    return 0;
+}

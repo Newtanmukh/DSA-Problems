@@ -1,0 +1,4 @@
+find the gcd of all the numbers in the arrays. if its something greater than 1,it means no matter 
+how many numbers you delete gcd of other remaining elements will always be 1.
+
+otherwise,if gcd is 1,then it means no element is to be deleted. in that case print out 0.

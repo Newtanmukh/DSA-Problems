@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+typedef long long ll;
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	ll t;cin>>t;
+	ll n;
+	ll a[t+1]={0};
+	ll k=t;
+	while(t--){
+	    
+	    cin>>n;
+
+	    a[n]++;
+	}
+	    for(ll i=0;i<=k;++i)
+	    {
+	        if(a[i]==0)
+	        cout<<i<<" ";
+	    }cout<<endl;
+	return 0;
+}

@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;cin>>t;while(t--){int i;
+	    int d;cin>>d;int c=0;
+	    char s[d];
+	    for(i=0;i<d;i++)
+	    {cin>>s[i];
+	    if(s[i]=='P')
+	    c++;}
+	    int proxy=0,flag=0;
+	    float atten=(float)c/(float)d;
+	   if(atten>=0.75)
+	   flag=1;
+	    else
+	    {for(i=2;i<d-2;i++)
+	    {if(s[i]=='A'&&(s[i+1]=='P'||s[i+2]=='P')&&(s[i-1]=='P'||s[i-2]=='P'))
+	    {proxy++;c++;}
+	    atten=(float)c/(float)d;
+	    if(atten>=0.75)
+	    {flag=1;break;}}}
+	    if(flag==1)
+	    cout<<proxy<<endl;
+	    else cout<<"-1"<<endl;
+	}
+	return 0;
+}

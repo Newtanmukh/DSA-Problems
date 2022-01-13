@@ -1,0 +1,13 @@
+          if(n==1)
+        {
+            cout<<"1\n";
+            continue;
+        }
+        if(odd%2==1)
+        {
+            cout<<"2\n";
+        }
+        else
+        {
+            cout<<"1\n";
+        }

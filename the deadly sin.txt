@@ -1,0 +1,28 @@
+//alternate method can be , just print 2 times the gcd of the two numbers.
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int t,x,y; 
+	cin>>t; 
+	while(t--) 
+	{
+	    cin>>x>>y; 
+	    while(x!=0 && y!=0 && x!=y) 
+	    {
+	        if(x>y) 
+	        {
+	            x=x-y;
+	        }
+	        else
+	        {
+	            y=y-x;
+	        }
+	    }
+	    cout<<x+y<<endl; 
+	}
+	return 0;
+}

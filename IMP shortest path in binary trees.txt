@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int i,j,ans=0;
+        cin>>i>>j;
+        while(i!=j)
+        {
+            if(i>j)
+            i/=2;
+            else
+            j/=2;
+            
+            ans++;
+        }
+        cout<<ans<<"\n";
+    }
+}
+
+// use the logic that in a binary tree of vertex number n,its children are 2*n and 2*n+1. it mean dividing the children vertex number by 2 will take you upward by one level. sinc 2n/2 = n and 2n+1/2 is also n.

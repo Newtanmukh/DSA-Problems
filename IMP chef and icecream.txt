@@ -1,0 +1,25 @@
+REP1(0,n)
+{if(a[i]==5)
+mp[5]++;	
+else if(a[i]==10)
+    {if(mp[5]>0)
+       {mp[5]--;
+         mp[10]++;
+	   }
+	 else
+	   {flag=1;
+	 	break;
+	   }
+	}	
+else if(a[i]==15)
+     {if(mp[10]>0)
+     	mp[10]--;
+   	   else if(mp[5]>1)
+     	mp[5]-=2;
+     	 else
+	   {flag=1;
+	 	break;
+	   }
+     	  	
+	 }
+	
